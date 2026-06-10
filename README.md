@@ -1,85 +1,178 @@
+# Halin Landing Page
+
+Marketing landing page for **Halin** — smart inventory and sales tracking for Philippine MSMEs (Micro, Small, and Medium Enterprises).
+
+---
+
+## 📁 Project Structure
+
+```
+halin-landing/
+  index.html        ← All page sections and content
+  favicon.ico       ← Browser tab icon (H + trend line mark)
+  css/
+    styles.css      ← Layout, components, light mode tokens
+    dark.css        ← Dark mode overrides only
+  js/
+    theme.js        ← Theme toggle, hamburger menu, scroll-spy
+  assets/
+    logo.svg        ← Halin SVG logo (theme-aware via CSS vars)
+  README.md         ← This file
+```
+
+---
+
+## 🗂️ Page Sections
+
+| # | Section ID | Description |
+|---|-----------|-------------|
+| Nav | — | Sticky top nav with logo, links, theme toggle, CTA |
+| 1 | `#home` | Hero — headline, subtitle, earnings preview phone |
+| 2 | `#early-access` | Waitlist signup form |
+| 3 | `#features` | 3 feature rows (Orders, Sales Analytics, Low-Stock) |
+| 4 | `#testimonials` | 3 customer story cards |
+| 5 | `#final-cta` | Final signup strip |
+| — | Footer | Copyright and tagline |
+
 ---
 
 ## ✏️ How to Edit Content
 
-All editable content is located in   `index.html`  . Look for `✏️ EDIT:` comments throughout the file to find sections quickly.
+All content lives in **`index.html`**. Find sections by their comment headers (`<!-- SECTION 1: HERO -->` etc.).
 
-### Hero Section
-    Headline   → Located in `<h1 class="hero-title">` (~line 100). Default text highlights the shift to managing store operations entirely on a phone.
-    Subtitle   → Located in `<p class="hero-subtitle">` (~line 103). Highlights AI-driven solutions built for Filipino micro-retailers.
-    CTA Buttons   → Within the `.hero-ctas` block.
-    Waitlist Count   → Contained in the `.social-proof-text` span, displaying active user interest (e.g., `240+ store owners`).
+### Navigation links
+```html
+<div class="nav-links">
+  <a href="#home">Home</a>
+  <a href="#early-access">Early Access</a>
+  <a href="#features">Features</a>
+  <a href="#testimonials">Stories</a>
+  <a href="#final-cta">Start Your Journey</a>
+</div>
+```
+Edit the link text or `href` values to match your section IDs.
 
-### Early Access Form
-  Search for `id="early-access"`.
-  Edit the `section-title`, `section-body`, and input fields or `placeholder` texts.
-    Backend Connection  : To connect to a live database or form collector, add your handler destination to `action=""` and `method="POST"` inside the block or wrap inputs inside a standard `<form>` element.
+### Hero (Section 1 — `#home`)
+- **Headline** → `<h1 class="hero-title">`
+- **Subtitle** → `<p class="hero-subtitle">`
+- **Primary CTA** → `<a class="btn-primary">Launch Your Workspace</a>`
+- **Secondary CTA** → `<a class="btn-ghost">Watch Demo</a>`
+- **Waitlist count** → `<span class="social-proof-text"><strong>240+ store owners</strong>...`
+- **Phone screen numbers** (earnings, transactions, items sold) → inside `ph-hero-value`, `ph-stat-value` elements inside the hero phone block
 
-### Feature Rows & Core Engines
+### Early Access Form (Section 2 — `#early-access`)
+- Edit `section-title`, `section-body`, and `placeholder` text on the two inputs
+- To connect to a real backend, wrap the inputs in a `<form action="YOUR_URL" method="POST">` tag
 
-| Section Block | HTML Content Identifier | Core Marketing Feature Focus |
-|:---|:---|:---|
-|   Row A: Orders   | `Feature A heading` / `body` | Fast Touchscreen Cart & Order Calculations to stop math errors behind the counter. |
-|   Row B: Kita Analytics   | `Feature B heading` / `body` | Real-time Daily Sales Insights using minimalist cash flow and transaction tracking charts. |
-|   Row C: Paubos Warnings   | `Feature C heading` / `body` | Smart Low-Stock Threshold Flags to prevent lost revenue on fast-moving items. |
+### Feature Rows (Section 3 — `#features`)
 
-### Testimonials & Social Proof
-Search for `✏️ Card 1`, `✏️ Card 2`, and `✏️ Card 3` to modify localized copy:
-    Aling Maria   (Pasay City, Metro Manila) — Focusing on manual logbooks, soft drinks, and high-speed checkout line management.
-    Mang Juan   (Cebu City, Cebu) — Focusing on the power of clear daily sales charts to identify high-profit margin items.
-    Sari-Sari Hub   (Quezon City, Metro Manila) — Showcasing weekend sales preservation via low-stock alerts.
-   Note: Avatar initials can be modified inside each respective `.testimonial-avatar` tag. 
+**Row A — Instant Orders & Cart**
+- Tag label → `<div class="feature-tag">Instant Orders & Cart</div>`
+- Heading → `<h2 class="feature-title">Fast Touchscreen Cart...</h2>`
+- Body → `<p class="feature-body">The single most important engine...`
+- Phone shows: Orders screen with cart items (Central Brown Sugar, Coca-Cola, Lucky Me), subtotal, discount, Amount Due, Discount + Checkout buttons
 
-### Final CTA & Footer
-    Final Conversion   → Search `id="final-cta"` to customize the closing invitation for owners looking to automate inventory.
-    Footer Metadata   → Search `<footer class="page-footer">` to update the `© 2026 Halin` copyright string and the native tagline ( Gabay sa pag-asenso ng bawat tindahang Pilipino ).
+**Row B — Sales Analytics**
+- Tag label → `<div class="feature-tag">Sales Analytics</div>`
+- Heading → `<h2 class="feature-title">Real-time Daily Sales Tracking</h2>`
+- Body → `<p class="feature-body">Because every transaction feeds...`
+- Phone shows: Dashboard with earnings overview line chart (Sun–Sat), recent transactions list
+
+**Row C — Inventory Low-Stock Alert**
+- Tag label → `<div class="feature-tag">Inventory Low-Stock Alert</div>`
+- Heading → `<h2 class="feature-title">Smart Inventory Low-Stock Detector</h2>`
+- Body → `<p class="feature-body">Set a custom minimum count...`
+- Phone shows: Products list with low-stock warnings (⚠) on Central Brown Sugar, Tide Detergent, Champion Detergent
+
+### Testimonials (Section 4 — `#testimonials`)
+Three cards. Each has:
+```html
+<div class="testimonial-card">
+  <div class="testimonial-stars">★★★★★</div>
+  <p class="testimonial-quote">"Quote text here."</p>
+  <div class="testimonial-author">
+    <div class="testimonial-avatar">XX</div>  ← initials
+    <div>
+      <div class="testimonial-name">Name</div>
+      <div class="testimonial-location">City, Region</div>
+    </div>
+  </div>
+</div>
+```
+Current authors: Aling Maria (Pasay), Mang Juan (Cebu), Sari-Sari Hub (QC).
+
+### Final CTA (Section 5 — `#final-cta`)
+- Heading → `<h2 class="section-title">Join hundreds of store owners...`
+- Body → `<p class="section-body">Ditch the paper listahan...`
+- Button → `<button class="btn-primary">Sign up for Early Access</button>`
+
+### Footer
+```html
+<footer class="page-footer">
+  <span>© 2026 Halin. Built for Philippine MSMEs...</span>
+  <span class="page-footer-tagline">Gabay sa pag-asenso...</span>
+</footer>
+```
 
 ---
 
 ## 🎨 How to Change Colors
 
-All primary design tokens are managed as CSS variables in `css/styles.css` under the global `:root {}` selector.
+All color tokens are in `css/styles.css` under `:root {}`.
 
-  `--green` (`#40A040`) → Primary brand identifier for UI accents, alerts, badges, and button fills.
-  `--bg` (`#FBFBF9`) → Clean, off-white workspace background for light mode.
-  `--bg-alt` (`#F4F8F4`) → Soft alternate section striping to distinguish features.
-  `--text-head` (`#1A241C`) → High-contrast dark charcoal hue for scannable headings.
-  `--text-body` (`#4A544C`) → Balanced muted charcoal for readable body and description text.
+| Token | Default | Used for |
+|-------|---------|----------|
+| `--green` | `#40A040` | Buttons, accents, logo trend line, links |
+| `--bg` | `#FBFBF9` | Page background (light mode) |
+| `--bg-alt` | `#F4F8F4` | Alternate section background |
+| `--bg-card` | `#FFFFFF` | Cards, inputs |
+| `--text-head` | `#1A241C` | Headings |
+| `--text-body` | `#4A544C` | Body copy |
+| `--text-muted` | `#94A3B8` | Captions, placeholders |
+| `--border` | `#E2E8F0` | Dividers, input borders |
 
- Note: Dark mode overrides and theme inversions are located exclusively inside `css/dark.css` mapped underneath the `body.dark {}` global modifier. 
+Dark mode overrides are in `css/dark.css` under `body.dark {}`.
 
----
-
-## 📱 Phone Screens & Live Mockups
-
-The high-fidelity phone application mockups are rendered using   inline HTML and responsive SVGs   inside `index.html`. They are hardcoded to display in dark mode to mirror the actual product environment, independent of the landing page's light/dark toggle state.
-
-To modify application mockups:
-1. Locate your desired phone frame via internal structural remarks (e.g., `<!-- Phone — Orders screen -->` or `<!-- Phone — Dashboard/chart screen -->`).
-2. Tweak item entries (e.g.,  Central Brown Sugar ,  Lucky Me! Pancit Canton , or  Coca-Cola 1.5L ) and currency pricing values (`₱160.00`, `₱482.50`) directly inside the HTML markup nodes.
-3. Chart vectors live inside custom `<polyline points="...">` arrays. Pairs represent explicit `x,y` coordinate metrics. A lower `y` numeric value plots the data path higher on the visual graph matrix.
+**Phone screen colors are intentionally fixed** — the app UI always renders dark regardless of the landing page theme.
 
 ---
 
 ## 🌙 Theme Toggle
 
-Handled automatically by `js/theme.js`. The user's preference is saved to `localStorage` under the key `halin-theme`.
+`js/theme.js` handles:
+- Clicking the toggle button adds/removes `body.dark`
+- Preference saved to `localStorage` key `halin-theme`
+- Hamburger open/close for mobile drawer
+- Scroll-spy that highlights the active nav link
 
-To change the default theme, edit the `initTheme()` function in `theme.js`.
+Default theme on first visit: **light**. To change to dark by default, edit `initTheme()` in `theme.js`.
+
+---
+
+## 📱 Phone Screens
+
+The three feature phone mockups are inline HTML/SVG — no image files. They always render dark (matching the real Halin app). To update content:
+
+- **Orders screen** → find `<!-- Phone — Orders screen -->` in `index.html`, edit product names and amounts inside `.ph-order-item` blocks
+- **Sales Analytics screen** → find `<!-- Phone — Dashboard/chart screen -->`, edit chart `<polyline points="...">` (lower y = higher on chart) and stat values
+- **Products/Inventory screen** → find `<!-- Phone — Products / inventory screen -->`, edit `.ph-product` rows and `.ph-stock` / `.ph-stock-low` badges
 
 ---
 
 ## 🚀 Deploying
 
-This is a plain static site — no build step or node package installations are required.
+Static site — no build step needed.
 
-    Netlify / Vercel  : Drag and drop the root `halin-landing/` folder directly into the web app deploy deployment zones.
-    GitHub Pages  : Push the repository upstream and toggle the Pages site building source setting to target your main root branch.
-    Traditional cPanel Hosting  : Upload the assets, CSS, JS, and index files directly into your remote public directory root.
+- **Netlify / Vercel** → drag the `halin-landing/` folder into the deploy zone
+- **GitHub Pages** → push to repo, set Pages source to root
+- **cPanel / shared hosting** → upload all files keeping the folder structure intact
+
+Make sure `favicon.ico` is in the root of the deployed folder so browsers pick it up automatically.
 
 ---
 
-## 🔗 Nav Links
+## 🔗 Adding a Pricing Section
 
-The site navigation maps directly to in-page anchor IDs: `#features`, `#pricing`, and `#early-access`. 
-   Note: The `#pricing` link does not link to an active block. Insert a custom `<section id="pricing">` element inside `index.html` once subscription structures or product pricing tiers are ready to be published. 
+The nav has a `#pricing` link ready. To activate it:
+1. Add `<section id="pricing" class="section">...</section>` between `#features` and `#testimonials` in `index.html`
+2. Add pricing styles to `css/styles.css`
