@@ -1,0 +1,13 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# IDE and Code Editor Settings
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# CSS Preprocessor Caches (if you use Sass/Less)
+.sass-cache/
+*.css.map

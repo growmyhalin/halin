@@ -1,0 +1,66 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle (optional) -->
+  <circle cx="256" cy="256" r="250" fill="none" stroke="#F0F4F0" stroke-width="2"/>
+  
+  <!-- Left bar (bar graph column) -->
+  <g>
+    <rect x="120" y="260" width="60" height="160" rx="8" fill="#6B7280" opacity="0.75"/>
+    <!-- Subtle highlight -->
+    <rect x="120" y="260" width="12" height="160" rx="8" fill="#9CA3AF" opacity="0.4"/>
+  </g>
+  
+  <!-- Right bar (bar graph column) - taller to show growth -->
+  <g>
+    <rect x="332" y="180" width="60" height="240" rx="8" fill="#6B7280" opacity="0.75"/>
+    <!-- Subtle highlight -->
+    <rect x="332" y="180" width="12" height="240" rx="8" fill="#9CA3AF" opacity="0.4"/>
+  </g>
+  
+  <!-- Vine-like growth curve (main line) -->
+  <path 
+    d="M 150 300 
+       Q 180 280, 210 250
+       Q 240 220, 270 160
+       Q 290 120, 320 100
+       Q 345 80, 362 120"
+    stroke="#40A040"
+    stroke-width="24"
+    fill="none"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  
+  <!-- Vine-like growth curve (secondary accent) -->
+  <path 
+    d="M 150 300 
+       Q 180 280, 210 250
+       Q 240 220, 270 160
+       Q 290 120, 320 100
+       Q 345 80, 362 120"
+    stroke="#40A040"
+    stroke-width="16"
+    fill="none"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    opacity="0.5"
+    stroke-dasharray="20,30"
+  />
+  
+  <!-- Vine tendrils/leaves for organic look -->
+  <g stroke="#40A040" stroke-width="8" fill="none" stroke-linecap="round">
+    <!-- Left tendril -->
+    <path d="M 210 250 Q 200 240, 190 235"/>
+    <!-- Right tendril -->
+    <path d="M 270 160 Q 280 145, 290 135"/>
+    <!-- Top tendril -->
+    <path d="M 320 100 Q 315 85, 310 75"/>
+  </g>
+  
+  <!-- Growth arrow tip at end -->
+  <g fill="#40A040">
+    <!-- Arrow head -->
+    <path d="M 362 120 L 350 95 L 365 105 Z"/>
+    <!-- Small circle accent -->
+    <circle cx="362" cy="120" r="12" fill="none" stroke="#40A040" stroke-width="4" opacity="0.6"/>
+  </g>
+</svg>

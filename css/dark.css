@@ -1,0 +1,101 @@
+/* ═══════════════════════════════════════════
+   HALIN LANDING — dark.css
+   All dark mode overrides.
+   Applied via body.dark class (toggled by theme.js).
+   Phone screen tokens are overridden here so the mockup
+   visuals switch with the landing page theme.
+═══════════════════════════════════════════ */
+
+body.dark {
+  /* Surface */
+  --bg:          #0D110E;
+  --bg-alt:      #0A0F0B;
+  --bg-card:     #141A15;
+  --border:      #243026;
+  --border-subtle:#243026;
+
+  /* Typography */
+  --text-head:   #F1F5F2;
+  --text-body:   #94A3B8;
+  --text-muted:  #4A544C;
+
+  /* Logo */
+  --logo-h-color:    #F1F5F2;
+  --logo-text-color: #F1F5F2;
+
+  /* Green overrides for dark — slightly brighter */
+  --green:        #40A040;
+  --green-light:  #5CC45C;
+  --green-pale2:  rgba(64,160,64,0.12);
+  --green-border: rgba(64,160,64,0.2);
+
+  /* Phone screen palette for dark mode */
+  --phone-bg:          #0f1410;
+  --phone-nav-bg:      #0f1410;
+  --phone-card:        #141a15;
+  --phone-border:      #1e2820;
+  --phone-text:        #ffffff;
+  --phone-text-muted:  #5a6b5c;
+  --phone-text-body:   #c0d0c2;
+  --phone-green:       #40A040;
+  --phone-green-light: #5CC45C;
+  --phone-red:         #e05252;
+  --phone-tag-cash-bg: #1e2d3a;
+  --phone-tag-cash-fg: #7aaccc;
+  --phone-tag-gcash-bg:#1a2d1e;
+  --phone-tag-gcash-fg:#60b870;
+}
+
+/* Nav glass */
+body.dark .nav {
+  background: rgba(13,17,14,0.92);
+  border-bottom-color: #243026;
+}
+
+/* Toggle knob */
+body.dark .theme-toggle {
+  background: #243026;
+}
+body.dark .theme-toggle-knob {
+  transform: translateX(24px);
+  background: #40A040;
+}
+
+/* Mobile drawer */
+body.dark .mobile-drawer {
+  background: #141A15;
+  border-bottom-color: #243026;
+}
+body.dark .mobile-drawer a {
+  color: #94A3B8;
+  border-bottom-color: #243026;
+}
+
+/* Ham lines */
+body.dark .ham-line { background: #F1F5F2; }
+
+/* Leaf divider line */
+body.dark .leaf-divider-line { background: #243026; }
+
+/* Phone outer glow — slightly brighter in dark */
+body.dark .phone-outer-glow {
+  background: radial-gradient(circle, rgba(64,160,64,0.2) 0%, transparent 70%);
+}
+
+/* Phone border glow ring */
+body.dark .phone {
+  border-color: #2a3a2c;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.6), 0 0 0 1px rgba(64,160,64,0.12);
+}
+
+/* Hero glow */
+body.dark .hero-glow,
+body.dark .final-cta-bg-glow {
+  background: radial-gradient(circle, rgba(64,160,64,0.16) 0%, transparent 70%);
+}
+
+/* Testimonial cards */
+body.dark .testimonial-card {
+  background: #141A15;
+  border-color: #243026;
+}

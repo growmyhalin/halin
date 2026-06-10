@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Halin — Smart Inventory & Sales for Philippine Sari-Sari Stores and other MSMEs</title>
+  <meta name="description" content="Halin replaces your paper listahan with a living digital workspace. Track sales, flag low-stock products, and power fast checkout — all from one simple app."/>
+  <link rel="stylesheet" href="css/styles.css"/>
+  <link rel="stylesheet" href="css/dark.css"/>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════ -->
+<header>
+  <nav class="nav">
+    <!-- Logo -->
+    <a href="#" class="nav-logo" aria-label="Halin home">
+      <svg class="logo-svg-inline" width="130" height="32" viewBox="0 0 130 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- H letterform — color controlled by CSS var -->
+        <rect x="0" y="0" width="6" height="26" rx="1.5" fill="var(--logo-h-color, #1A241C)"/>
+        <rect x="20" y="0" width="6" height="26" rx="1.5" fill="var(--logo-h-color, #1A241C)"/>
+        <rect x="0" y="9.5" width="26" height="5" rx="1.5" fill="var(--logo-h-color, #1A241C)"/>
+        <!-- Trend line through H crossbar -->
+        <line x1="-3" y1="28" x2="9" y2="15" stroke="#40A040" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="17" y1="9" x2="30" y2="-1" stroke="#40A040" stroke-width="2.2" stroke-linecap="round"/>
+        <!-- Arrowhead -->
+        <path d="M25.5 -3L31 -1L29 5" fill="none" stroke="#40A040" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Leaf at tip -->
+        <ellipse cx="32" cy="-2" rx="5" ry="2.2" fill="#40A040" transform="rotate(-45 32 -2)" opacity="0.9"/>
+        <!-- Wordmark -->
+        <text x="28" y="23" font-family="Inter, system-ui" font-size="25" font-weight="800" letter-spacing="-0.5" fill="var(--logo-text-color, #1A241C)">alin</text>
+      </svg>
+    </a>
+
+    <!-- Desktop nav links -->
+    <div class="nav-links">
+      <a href="#home" class="nav-link-item">Home</a>
+      <a href="#early-access" class="nav-link-item active">Early Access</a>
+      <a href="#features" class="nav-link-item">Features</a>
+      <a href="#testimonials" class="nav-link-item">Stories</a>
+      <a href="#final-cta" class="nav-link-item">Start Your Journey</a>
+    </div>
+
+    <!-- Right controls -->
+    <div class="nav-right">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <div class="theme-toggle-knob"></div>
+      </button>
+      <a href="#early-access" class="nav-cta">Get Early Access</a>
+    </div>
+
+    <!-- Mobile hamburger -->
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <div class="ham-line"></div>
+      <div class="ham-line"></div>
+      <div class="ham-line"></div>
+    </button>
+  </nav>
+
+  <!-- Mobile drawer -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <a href="#home">Home</a>
+    <a href="#early-access">Early Access</a>
+    <a href="#features">Features</a>
+    <a href="#testimonials">Stories</a>
+    <a href="#final-cta">Start Your Journey</a>
+    <a href="#early-access" class="mob-drawer-cta">Get Early Access →</a>
+  </div>
+</header>
+
+
+<!-- ════════════════════════════════════════
+     SECTION 1: HERO
+     ──────────────────────────────────────
+     To edit: change hero-title, hero-subtitle,
+     btn text, or swap the phone SVG component.
+════════════════════════════════════════ -->
+<section id="home" class="section" style="position:relative; overflow:hidden;">
+
+  <!-- Vine left -->
+  <div class="vine-strip vine-strip-left" aria-hidden="true">
+    <svg width="28" height="100%" viewBox="0 0 28 900" preserveAspectRatio="none" fill="none">
+      <path d="M14 0 C14 50,24 70,14 120 C4 170,24 190,14 240 C4 290,22 310,14 360 C6 410,22 430,14 480 C6 530,22 550,14 600 C6 650,20 670,14 720 C8 770,18 790,14 900" stroke="#40A040" stroke-width="1" stroke-opacity="0.18"/>
+      <ellipse cx="19" cy="100" rx="6" ry="3" fill="#40A040" fill-opacity="0.14" transform="rotate(-30 19 100)"/>
+      <ellipse cx="10" cy="220" rx="6" ry="3" fill="#40A040" fill-opacity="0.14" transform="rotate(20 10 220)"/>
+      <ellipse cx="20" cy="340" rx="6" ry="3" fill="#40A040" fill-opacity="0.14" transform="rotate(-25 20 340)"/>
+      <ellipse cx="10" cy="460" rx="6" ry="3" fill="#40A040" fill-opacity="0.14" transform="rotate(15 10 460)"/>
+      <ellipse cx="20" cy="580" rx="6" ry="3" fill="#40A040" fill-opacity="0.14" transform="rotate(-30 20 580)"/>
+    </svg>
+  </div>
+  <!-- Vine right -->
+  <div class="vine-strip vine-strip-right" aria-hidden="true">
+    <svg width="28" height="100%" viewBox="0 0 28 900" preserveAspectRatio="none" fill="none">
+      <path d="M14 0 C14 50,4 70,14 120 C24 170,4 190,14 240 C24 290,6 310,14 360 C22 410,4 430,14 480 C24 530,6 550,14 600 C24 650,8 670,14 720 C20 770,10 790,14 900" stroke="#40A040" stroke-width="1" stroke-opacity="0.18"/>
+      <ellipse cx="9" cy="120" rx="6" ry="3" fill="#40A040" fill-opacity="0.14" transform="rotate(30 9 120)"/>
+      <ellipse cx="19" cy="240" rx="6" ry="3" fill="#40A040" fill-opacity="0.14" transform="rotate(-20 19 240)"/>
+      <ellipse cx="9" cy="360" rx="6" ry="3" fill="#40A040" fill-opacity="0.14" transform="rotate(25 9 360)"/>
+    </svg>
+  </div>
+
+  <div class="hero">
+    <!-- Text column -->
+    <div class="hero-text">
+
+      <div class="hero-visual hero-visual-mobile" aria-label="Earnings preview">
+        <div class="hero-glow"></div>
+        <div class="phone phone-lg hero-chart-phone">
+          <!-- <div class="ph-status">
+            <span class="ph-time">5:42</span>
+            <svg width="40" height="11" viewBox="0 0 40 11" fill="none" stroke="currentColor">
+              <rect x="0" y="3" width="3" height="8" rx="1"/>
+              <rect x="5" y="2" width="3" height="9" rx="1"/>
+              <rect x="10" y="1" width="3" height="10" rx="1"/>
+              <rect x="15" y="0" width="3" height="11" rx="1"/>
+              <path d="M21 5.5C23.5 3 29.5 3 32 5.5" stroke="currentColor" stroke-width="1.2" fill="none"/>
+              <path d="M23 7.5C24.5 6 28.5 6 30 7.5" stroke="currentColor" stroke-width="1.2" fill="none"/>
+              <circle cx="26.5" cy="9.5" r="1"/>
+              <rect x="35" y="1" width="4" height="9" rx="1" fill-opacity="0.35"/>
+              <rect x="35.5" y="1.5" width="3" height="8" rx="0.7"/>
+            </svg>
+          </div> -->
+          <!-- <div class="ph-nav"><div class="ph-logo">Halin</div></div>
+          <div class="ph-hr"></div> -->
+
+          <div class="ph-content ph-hero-chart-only">
+            <div class="ph-hero-badge" style="margin-top: 8px;">Live earnings</div>
+            <div class="ph-hero-main">
+              <div>
+                <div class="ph-hero-label">Today’s earnings</div>
+                <div class="ph-hero-value">₱24,730</div>
+                <div class="ph-hero-note">+18.4% from yesterday</div>
+              </div>
+              <!-- <span class="ph-hero-pill">+12%</span> -->
+            </div>
+            <div class="ph-stat-grid hero-mini-stats">
+              <div class="ph-stat hero-stat-card">
+                <div class="ph-stat-label">Transactions</div>
+                <div class="ph-stat-value">18</div>
+                <div class="ph-stat-note">+6 from</div>
+              </div>
+              <div class="ph-stat hero-stat-card">
+                <div class="ph-stat-label">Items Sold</div>
+                <div class="ph-stat-value">156</div>
+                <div class="ph-stat-note">+13 from yesterday</div>
+              </div>
+            </div>
+            <div class="ph-chart-card hero-chart-card">
+              <div class="ph-chart-header">
+                <span class="ph-chart-title">Earnings overview</span>
+                <span class="ph-chart-filter">This week</span>
+              </div>
+              <svg class="hero-chart-svg" width="100%" viewBox="0 0 188 80" aria-label="Earnings chart" style="margin-bottom: 12px;">
+                <defs>
+                  <linearGradient id="heroEarningsFillMobile" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#40A040" stop-opacity="0.28"/>
+                    <stop offset="100%" stop-color="#40A040" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <line x1="0" y1="18" x2="188" y2="18" stroke="#1e2820" stroke-width="0.6" stroke-dasharray="3,3"/>
+                <line x1="0" y1="38" x2="188" y2="38" stroke="#1e2820" stroke-width="0.6" stroke-dasharray="3,3"/>
+                <line x1="0" y1="58" x2="188" y2="58" stroke="#1e2820" stroke-width="0.6" stroke-dasharray="3,3"/>
+                <path class="hero-chart-area" d="M12,55 L40,60 L68,44 L96,12 L124,30 L152,40 L180,50 L180,64 L12,64 Z" fill="url(#heroEarningsFillMobile)"/>
+                <polyline class="hero-chart-line" points="12,55 40,60 68,44 96,12 124,30 152,40 180,50" fill="none" stroke="#40A040" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+                <circle cx="96" cy="12" r="4" fill="#40A040"/>
+                <!-- <text x="96" y="13" text-anchor="middle" font-size="8" fill="white" font-family="Inter,system-ui" font-weight="700">₱24,730</text> -->
+                <circle cx="12" cy="55" r="2.5" fill="#40A040"/>
+                <circle cx="40" cy="60" r="2.5" fill="#40A040"/>
+                <circle cx="68" cy="44" r="2.5" fill="#40A040"/>
+                <circle cx="124" cy="30" r="2.5" fill="#40A040"/>
+                <circle cx="152" cy="40" r="2.5" fill="#40A040"/>
+                <circle cx="180" cy="50" r="2.5" fill="#40A040"/>
+                <text x="12" y="76" text-anchor="middle" font-size="8" fill="#5a6b5c" font-family="Inter,system-ui">Sun</text>
+                <text x="40" y="76" text-anchor="middle" font-size="8" fill="#5a6b5c" font-family="Inter,system-ui">Mon</text>
+                <text x="68" y="76" text-anchor="middle" font-size="8" fill="#5a6b5c" font-family="Inter,system-ui">Tue</text>
+                <text x="96" y="76" text-anchor="middle" font-size="8" fill="#5a6b5c" font-family="Inter,system-ui">Wed</text>
+                <text x="124" y="76" text-anchor="middle" font-size="8" fill="#5a6b5c" font-family="Inter,system-ui">Thu</text>
+                <text x="152" y="76" text-anchor="middle" font-size="8" fill="#5a6b5c" font-family="Inter,system-ui">Fri</text>
+                <text x="180" y="76" text-anchor="middle" font-size="8" fill="#40A040" font-family="Inter,system-ui" font-weight="700">Sat</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-eyebrow">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><ellipse cx="5" cy="5" rx="4.5" ry="2.8" fill="#40A040" transform="rotate(-30 5 5)"/></svg>
+        Early Access
+      </div>
+
+      <!-- EDIT: Main headline -->
+      <!-- <h1 class="hero-title">Your <span class="hero-odometer" aria-live="polite"><span class="hero-odometer-item">Sari-Sari Store,</span></span><br/><span>finally running smart.</span></h1> -->
+      <h1 class="hero-title">Your entire store operations, <span>right on your phone.</span></h1>
+      <!-- EDIT: Subtitle -->
+      <p class="hero-subtitle">In a world where AI is changing everything, Filipino micro-retailers deserve tools built for the future. It’s time to level up!</p>
+      <p class="hero-subtitle">Experience instant touchscreen ordering, watch your daily earnings grow automatically, and get instant alerts before stock runs low.</p>
+
+      <div class="hero-ctas">
+        <!-- EDIT: CTA button text and href -->
+        <a href="#early-access" class="btn-primary">Get Early Access</a>
+        <a href="#features" class="btn-ghost">
+          Learn More
+        </a>
+        <!-- <a href="#features" class="btn-ghost">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#40A040" stroke-width="1.5"/><path d="M5.5 4.5l4 2.5-4 2.5V4.5z" fill="#40A040"/></svg>
+          Learn More
+        </a> -->
+      </div>
+
+      <div class="hero-social-proof">
+        <div class="avatar-stack">
+          <div class="avatar">JD</div>
+          <div class="avatar">MS</div>
+          <div class="avatar">AR</div>
+          <div class="avatar">RC</div>
+        </div>
+        <!-- EDIT: Waitlist count -->
+        <span class="social-proof-text"><strong>240+ store owners</strong> already on the waitlist</span>
+      </div>
+    </div>
+
+    <!-- Phone visual — Dashboard screen -->
+    <div class="hero-visual">
+      <div class="hero-glow"></div>
+      <div class="phone phone-lg hero-chart-phone">
+        <!-- <div class="ph-status">
+          <span class="ph-time">5:42</span>
+          <svg width="40" height="11" viewBox="0 0 40 11" fill="none" stroke="currentColor">
+            <rect x="0" y="3" width="3" height="8" rx="1"/>
+            <rect x="5" y="2" width="3" height="9" rx="1"/>
+            <rect x="10" y="1" width="3" height="10" rx="1"/>
+            <rect x="15" y="0" width="3" height="11" rx="1"/>
+            <path d="M21 5.5C23.5 3 29.5 3 32 5.5" stroke="currentColor" stroke-width="1.2" fill="none"/>
+            <path d="M23 7.5C24.5 6 28.5 6 30 7.5" stroke="currentColor" stroke-width="1.2" fill="none"/>
+            <circle cx="26.5" cy="9.5" r="1"/>
+            <rect x="35" y="1" width="4" height="9" rx="1" fill-opacity="0.35"/>
+            <rect x="35.5" y="1.5" width="3" height="8" rx="0.7"/>
+          </svg>
+        </div> -->
+
+        <!-- <div class="ph-nav"><div class="ph-logo">Halin</div></div>
+        <div class="ph-hr"></div> -->
+
+        <div class="ph-content ph-hero-chart-only">
+          <div class="ph-hero-badge" style="margin-top: 8px;">Live earnings</div>
+          <div class="ph-hero-main">
+            <div>
+              <div class="ph-hero-label">Today’s earnings</div>
+              <div class="ph-hero-value">₱24,730</div>
+              <div class="ph-hero-note">+18.4% from yesterday</div>
+            </div>
+            <!-- <span class="ph-hero-pill">+12%</span> -->
+          </div>
+          <div class="ph-stat-grid hero-mini-stats">
+            <div class="ph-stat hero-stat-card">
+              <div class="ph-stat-label">Transactions</div>
+              <div class="ph-stat-value">18</div>
+              <div class="ph-stat-note">+6 from yesterday</div>
+            </div>
+            <div class="ph-stat hero-stat-card">
+              <div class="ph-stat-label">Items Sold</div>
+              <div class="ph-stat-value">156</div>
+              <div class="ph-stat-note">+13 from yesterday</div>
+            </div>
+          </div>
+          <div class="ph-chart-card hero-chart-card">
+            <div class="ph-chart-header">
+              <span class="ph-chart-title">Earnings overview</span>
+              <span class="ph-chart-filter">This week</span>
+            </div>
+            <svg class="hero-chart-svg" width="100%" viewBox="0 0 188 80" aria-label="Earnings chart" style="margin-bottom: 12px;">
+              <defs>
+                <linearGradient id="heroEarningsFill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#40A040" stop-opacity="0.28"/>
+                  <stop offset="100%" stop-color="#40A040" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <line x1="0" y1="18" x2="188" y2="18" stroke="#1e2820" stroke-width="0.6" stroke-dasharray="3,3"/>
+              <line x1="0" y1="38" x2="188" y2="38" stroke="#1e2820" stroke-width="0.6" stroke-dasharray="3,3"/>
+              <line x1="0" y1="58" x2="188" y2="58" stroke="#1e2820" stroke-width="0.6" stroke-dasharray="3,3"/>
+              <path class="hero-chart-area" d="M12,55 L40,60 L68,44 L96,12 L124,30 L152,40 L180,50 L180,64 L12,64 Z" fill="url(#heroEarningsFill)"/>
+              <polyline class="hero-chart-line" points="12,55 40,60 68,44 96,12 124,30 152,40 180,50" fill="none" stroke="#40A040" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+              <circle cx="96" cy="12" r="4" fill="#40A040"/>
+              <circle cx="12" cy="55" r="2.5" fill="#40A040"/>
+              <circle cx="40" cy="60" r="2.5" fill="#40A040"/>
+              <circle cx="68" cy="44" r="2.5" fill="#40A040"/>
+              <circle cx="124" cy="30" r="2.5" fill="#40A040"/>
+              <circle cx="152" cy="40" r="2.5" fill="#40A040"/>
+              <circle cx="180" cy="50" r="2.5" fill="#40A040"/>
+              <text x="12" y="76" text-anchor="middle" font-size="8" fill="#5a6b5c" font-family="Inter,system-ui">Sun</text>
+              <text x="40" y="76" text-anchor="middle" font-size="8" fill="#5a6b5c" font-family="Inter,system-ui">Mon</text>
+              <text x="68" y="76" text-anchor="middle" font-size="8" fill="#5a6b5c" font-family="Inter,system-ui">Tue</text>
+              <text x="96" y="76" text-anchor="middle" font-size="8" fill="#40A040" font-family="Inter,system-ui">Wed</text>
+              <text x="124" y="76" text-anchor="middle" font-size="8" fill="#5a6b5c" font-family="Inter,system-ui">Thu</text>
+              <text x="152" y="76" text-anchor="middle" font-size="8" fill="#5a6b5c" font-family="Inter,system-ui">Fri</text>
+              <text x="180" y="76" text-anchor="middle" font-size="8" fill="#5a6b5c" font-family="Inter,system-ui" font-weight="700">Sat</text>
+            </svg>
+          </div>
+        </div>
+      </div><!-- end .phone -->
+    </div><!-- end .hero-visual -->
+  </div><!-- end .hero -->
+</section>
+
+
+<!-- Leaf divider -->
+<div class="leaf-divider" aria-hidden="true">
+  <div class="leaf-divider-line"></div>
+  <div class="leaf-divider-icons">
+    <svg class="leaf-divider-icon" width="22" height="15" viewBox="0 0 24 16" fill="none" aria-hidden="true"><path d="M12 2c-4 3-7 6-7 10 0 3 2 4 5 4s5-1 5-4c0-3-3-6-3-10z" fill="#40A040" fill-opacity="0.18"/><path d="M12 3.5c2.6 2.2 4.2 4.4 4.2 6.7 0 1.2-.7 2.1-1.8 2.1-1.3 0-2.2-.8-2.2-2 0-1.6 0-4.7-.2-6.8z" fill="#40A040" fill-opacity="0.34"/><path d="M12 3.5c-2.6 2.2-4.2 4.4-4.2 6.7 0 1.2.7 2.1 1.8 2.1 1.3 0 2.2-.8 2.2-2 0-1.6 0-4.7.2-6.8z" fill="#40A040" fill-opacity="0.18"/><path d="M11.8 5.2c-.7 1-.9 1.8-.9 2.8" stroke="#40A040" stroke-width="0.8" stroke-linecap="round" opacity="0.45"/></svg>
+    <svg class="leaf-divider-icon leaf-divider-icon--small" width="18" height="12" viewBox="0 0 24 16" fill="none" aria-hidden="true"><path d="M12 2c-4 3-7 6-7 10 0 3 2 4 5 4s5-1 5-4c0-3-3-6-3-10z" fill="#40A040" fill-opacity="0.18"/><path d="M12 3.5c2.6 2.2 4.2 4.4 4.2 6.7 0 1.2-.7 2.1-1.8 2.1-1.3 0-2.2-.8-2.2-2 0-1.6 0-4.7-.2-6.8z" fill="#40A040" fill-opacity="0.3"/><path d="M12 3.5c-2.6 2.2-4.2 4.4-4.2 6.7 0 1.2.7 2.1 1.8 2.1 1.3 0 2.2-.8 2.2-2 0-1.6 0-4.7.2-6.8z" fill="#40A040" fill-opacity="0.18"/></svg>
+    <svg class="leaf-divider-icon leaf-divider-icon--small" width="18" height="12" viewBox="0 0 24 16" fill="none" aria-hidden="true"><path d="M12 2c-4 3-7 6-7 10 0 3 2 4 5 4s5-1 5-4c0-3-3-6-3-10z" fill="#40A040" fill-opacity="0.18"/><path d="M12 3.5c2.6 2.2 4.2 4.4 4.2 6.7 0 1.2-.7 2.1-1.8 2.1-1.3 0-2.2-.8-2.2-2 0-1.6 0-4.7-.2-6.8z" fill="#40A040" fill-opacity="0.3"/><path d="M12 3.5c-2.6 2.2-4.2 4.4-4.2 6.7 0 1.2.7 2.1 1.8 2.1 1.3 0 2.2-.8 2.2-2 0-1.6 0-4.7.2-6.8z" fill="#40A040" fill-opacity="0.18"/></svg>
+  </div>
+  <div class="leaf-divider-line"></div>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     SECTION 2: EARLY ACCESS
+     ──────────────────────────────────────
+     Edit: section-title, section-body,
+     form placeholder labels, btn text
+════════════════════════════════════════ -->
+<section id="early-access" class="section early-access">
+  <div class="section-eyebrow">Join the Waitlist</div>
+  <h2 class="section-title">Join the Next Generation of <span>Asenso</span></h2>
+  <p class="section-body">Be among the first Philippine micro-retailers to transition from messy paper listahan to a growing digital workspace. Secure early access features today.</p>
+  <div class="form-row" style="justify-content:center">
+    <!-- Edit placeholder text or add name attributes for form submission -->
+    <!-- <input class="form-input" type="text" placeholder="Full Name" name="full_name"/>
+    <input class="form-input" type="text" placeholder="Phone Number or Email Address" name="contact"/> -->
+    <button class="btn-primary" type="submit">Secure My Early Access Slot</button>
+  </div>
+</section>
+
+
+<!-- Leaf divider -->
+<div class="leaf-divider" aria-hidden="true">
+  <div class="leaf-divider-line"></div>
+  <div class="leaf-divider-icons">
+    <svg class="leaf-divider-icon" width="22" height="15" viewBox="0 0 24 16" fill="none" aria-hidden="true"><path d="M12 2c-4 3-7 6-7 10 0 3 2 4 5 4s5-1 5-4c0-3-3-6-3-10z" fill="#40A040" fill-opacity="0.18"/><path d="M12 3.5c2.6 2.2 4.2 4.4 4.2 6.7 0 1.2-.7 2.1-1.8 2.1-1.3 0-2.2-.8-2.2-2 0-1.6 0-4.7-.2-6.8z" fill="#40A040" fill-opacity="0.34"/><path d="M12 3.5c-2.6 2.2-4.2 4.4-4.2 6.7 0 1.2.7 2.1 1.8 2.1 1.3 0 2.2-.8 2.2-2 0-1.6 0-4.7.2-6.8z" fill="#40A040" fill-opacity="0.18"/><path d="M11.8 5.2c-.7 1-.9 1.8-.9 2.8" stroke="#40A040" stroke-width="0.8" stroke-linecap="round" opacity="0.45"/></svg>
+    <svg class="leaf-divider-icon leaf-divider-icon--small" width="18" height="12" viewBox="0 0 24 16" fill="none" aria-hidden="true"><path d="M12 2c-4 3-7 6-7 10 0 3 2 4 5 4s5-1 5-4c0-3-3-6-3-10z" fill="#40A040" fill-opacity="0.18"/><path d="M12 3.5c2.6 2.2 4.2 4.4 4.2 6.7 0 1.2-.7 2.1-1.8 2.1-1.3 0-2.2-.8-2.2-2 0-1.6 0-4.7-.2-6.8z" fill="#40A040" fill-opacity="0.3"/><path d="M12 3.5c-2.6 2.2-4.2 4.4-4.2 6.7 0 1.2.7 2.1 1.8 2.1 1.3 0 2.2-.8 2.2-2 0-1.6 0-4.7.2-6.8z" fill="#40A040" fill-opacity="0.18"/></svg>
+    <svg class="leaf-divider-icon leaf-divider-icon--small" width="18" height="12" viewBox="0 0 24 16" fill="none" aria-hidden="true"><path d="M12 2c-4 3-7 6-7 10 0 3 2 4 5 4s5-1 5-4c0-3-3-6-3-10z" fill="#40A040" fill-opacity="0.18"/><path d="M12 3.5c2.6 2.2 4.2 4.4 4.2 6.7 0 1.2-.7 2.1-1.8 2.1-1.3 0-2.2-.8-2.2-2 0-1.6 0-4.7-.2-6.8z" fill="#40A040" fill-opacity="0.3"/><path d="M12 3.5c-2.6 2.2-4.2 4.4-4.2 6.7 0 1.2.7 2.1 1.8 2.1 1.3 0 2.2-.8 2.2-2 0-1.6 0-4.7.2-6.8z" fill="#40A040" fill-opacity="0.18"/></svg>
+  </div>
+  <div class="leaf-divider-line"></div>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     SECTION 3: FEATURES
+     ──────────────────────────────────────
+     Row A — Orders & Cart (text left, phone right)
+     Row B — Sales Analytics (phone left, text right)
+     Row C — Inventory Low-Stock Alerts (text left, phone right)
+════════════════════════════════════════ -->
+<section id="features" class="section features">
+
+  <!-- ── ROW A: Orders & Cart ── -->
+  <div class="feature-row">
+    <!-- Text -->
+    <div class="feature-text">
+      <div class="feature-tag">
+        Instant Orders & Cart
+      </div>
+      <!-- EDIT: Feature A heading -->
+      <h2 class="feature-title">Fast Touchscreen Cart &amp;<br/>Order Calculations</h2>
+      <!-- EDIT: Feature A body -->
+      <p class="feature-body">The single most important engine of your store. Calculate customer orders instantly with a tap-to-add cart system built for high-speed transactions behind the counter. No math errors, no slow hand-written totals—just rapid point-of-sale checkout that powers your entire store.</p>
+    </div>
+
+    <!-- Phone — Orders screen -->
+    <div class="feature-visual-right">
+      <div class="phone-wrap">
+        <div class="phone-outer-glow"></div>
+        <div class="phone">
+          <!-- <div class="ph-status">
+          <span class="ph-time">5:42</span>
+            <svg width="40" height="11" viewBox="0 0 40 11" fill="none" stroke="currentColor">
+              <rect x="0" y="3" width="3" height="8" rx="1"/>
+              <rect x="5" y="2" width="3" height="9" rx="1"/>
+              <rect x="10" y="1" width="3" height="10" rx="1"/>
+              <rect x="15" y="0" width="3" height="11" rx="1"/>
+              <path d="M21 5.5C23.5 3 29.5 3 32 5.5" stroke="currentColor" stroke-width="1.2" fill="none"/>
+              <path d="M23 7.5C24.5 6 28.5 6 30 7.5" stroke="currentColor" stroke-width="1.2" fill="none"/>
+              <circle cx="26.5" cy="9.5" r="1"/>
+              <rect x="35" y="1" width="4" height="9" rx="1" fill-opacity="0.35"/>
+              <rect x="35.5" y="1.5" width="3" height="8" rx="0.7"/>
+            </svg>
+          </div>
+          <div class="ph-nav"><div class="ph-logo">Halin</div></div>
+          <div class="ph-hr"></div> -->
+
+          <div class="ph-content" style="padding-bottom:0">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;margin-top: 8px;">
+              <div>
+                <div class="ph-section-title">Orders</div>
+                <div class="ph-section-sub">4 items in cart</div>
+              </div>
+              <!-- <div style="background:#40A040;color:#fff;font-size:10px;font-weight:700;padding:6px 12px;border-radius:8px">+ Add</div> -->
+            </div>
+            <div class="ph-search">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="#4a5a4c" stroke-width="1.2"><circle cx="4" cy="4" r="3"/><line x1="6.5" y1="6.5" x2="9" y2="9"/></svg>
+              Search product
+            </div>
+            <!-- Cart items -->
+            <div class="ph-order-item">
+              <div class="ph-order-header">
+                <div><div class="ph-order-name">Central Brown Sugar 1/2kilo</div><div class="ph-order-sku">SKU: 00001</div></div>
+                <div><div class="ph-order-unit">₱40.00/piece</div><div class="ph-order-total">₱80.00</div></div>
+              </div>
+              <div class="ph-order-actions">
+                <div class="ph-del-btn"><svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="#e05252" stroke-width="1.2"><path d="M1.5 3h8M3.5 3V2h4v1M4 5v3.5M7 5v3.5M2 3l.7 6.5h5.6L9 3"/></svg></div>
+                <div class="ph-qty"><div class="ph-qty-btn">−</div><div class="ph-qty-val">2</div><div class="ph-qty-btn">+</div></div>
+              </div>
+            </div>
+            <div class="ph-order-item">
+              <div class="ph-order-header">
+                <div><div class="ph-order-name">Coca-Cola 1.5L</div><div class="ph-order-sku">SKU: 00002</div></div>
+                <div><div class="ph-order-unit">₱75.00/bottle</div><div class="ph-order-total">₱75.00</div></div>
+              </div>
+              <div class="ph-order-actions">
+                <div class="ph-del-btn"><svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="#e05252" stroke-width="1.2"><path d="M1.5 3h8M3.5 3V2h4v1M4 5v3.5M7 5v3.5M2 3l.7 6.5h5.6L9 3"/></svg></div>
+                <div class="ph-qty"><div class="ph-qty-btn">−</div><div class="ph-qty-val">1</div><div class="ph-qty-btn">+</div></div>
+              </div>
+            </div>
+            <div class="ph-order-item">
+              <div class="ph-order-header">
+                <div><div class="ph-order-name">Lucky Me! Pancit Canton</div><div class="ph-order-sku">SKU: 00003</div></div>
+                <div><div class="ph-order-unit">₱15.00/pack</div><div class="ph-order-total">₱45.00</div></div>
+              </div>
+              <div class="ph-order-actions">
+                <div class="ph-del-btn"><svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="#e05252" stroke-width="1.2"><path d="M1.5 3h8M3.5 3V2h4v1M4 5v3.5M7 5v3.5M2 3l.7 6.5h5.6L9 3"/></svg></div>
+                <div class="ph-qty"><div class="ph-qty-btn">−</div><div class="ph-qty-val">3</div><div class="ph-qty-btn">+</div></div>
+              </div>
+            </div>
+            <!-- Summary panel -->
+            <div class="ph-summary">
+              <div class="ph-summary-row"><span>Subtotal</span><span>₱200.00</span></div>
+              <div class="ph-summary-row discount"><span>Discount</span><span>−₱40.00</span></div>
+              <div class="ph-summary-divider"></div>
+              <div class="ph-summary-total"><span>Amount Due</span><span>₱160.00</span></div>
+              <div class="ph-action-row" style="margin-bottom: 12px;">
+                <div class="ph-discount-btn">Discount</div>
+                <div class="ph-checkout-btn">Checkout</div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="ph-bottom-nav">
+            <div class="ph-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="8" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="11" width="7" height="10" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>Overview</div>
+            <div class="ph-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 9h20"/></svg>Products</div>
+            <div class="ph-nav-item active" aria-label="Cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 4h2l1.6 7.2a1 1 0 0 0 .97.8H16a1 1 0 0 0 .97-.79L18.4 9H6"/><circle cx="9.5" cy="19" r="1.25"/><circle cx="16.5" cy="19" r="1.25"/></svg></div>
+            <div class="ph-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg>History</div>
+            <div class="ph-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>More</div>
+          </div>
+          <div class="ph-gesture">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#333" stroke-width="1"><rect x="2" y="2" width="8" height="8" rx="1.2"/></svg>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#333" stroke-width="1"><circle cx="6" cy="6" r="3.5"/></svg>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#333" stroke-width="1"><path d="M7.5 2.5L4.5 6l3 3.5"/></svg>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div><!-- end row A -->
+
+  <!-- Leaf divider between feature rows -->
+  <div class="leaf-divider" style="padding:0 40px" aria-hidden="true">
+    <div class="leaf-divider-line"></div>
+    <div class="leaf-divider-icons">
+      <svg class="leaf-divider-icon" width="22" height="15" viewBox="0 0 24 16" fill="none" aria-hidden="true"><path d="M12 2c-4 3-7 6-7 10 0 3 2 4 5 4s5-1 5-4c0-3-3-6-3-10z" fill="#40A040" fill-opacity="0.18"/><path d="M12 3.5c2.6 2.2 4.2 4.4 4.2 6.7 0 1.2-.7 2.1-1.8 2.1-1.3 0-2.2-.8-2.2-2 0-1.6 0-4.7-.2-6.8z" fill="#40A040" fill-opacity="0.34"/><path d="M12 3.5c-2.6 2.2-4.2 4.4-4.2 6.7 0 1.2.7 2.1 1.8 2.1 1.3 0 2.2-.8 2.2-2 0-1.6 0-4.7.2-6.8z" fill="#40A040" fill-opacity="0.18"/><path d="M11.8 5.2c-.7 1-.9 1.8-.9 2.8" stroke="#40A040" stroke-width="0.8" stroke-linecap="round" opacity="0.45"/></svg>
+      <svg class="leaf-divider-icon leaf-divider-icon--small" width="18" height="12" viewBox="0 0 24 16" fill="none" aria-hidden="true"><path d="M12 2c-4 3-7 6-7 10 0 3 2 4 5 4s5-1 5-4c0-3-3-6-3-10z" fill="#40A040" fill-opacity="0.18"/><path d="M12 3.5c2.6 2.2 4.2 4.4 4.2 6.7 0 1.2-.7 2.1-1.8 2.1-1.3 0-2.2-.8-2.2-2 0-1.6 0-4.7-.2-6.8z" fill="#40A040" fill-opacity="0.3"/><path d="M12 3.5c-2.6 2.2-4.2 4.4-4.2 6.7 0 1.2.7 2.1 1.8 2.1 1.3 0 2.2-.8 2.2-2 0-1.6 0-4.7.2-6.8z" fill="#40A040" fill-opacity="0.18"/></svg>
+      <svg class="leaf-divider-icon leaf-divider-icon--small" width="18" height="12" viewBox="0 0 24 16" fill="none" aria-hidden="true"><path d="M12 2c-4 3-7 6-7 10 0 3 2 4 5 4s5-1 5-4c0-3-3-6-3-10z" fill="#40A040" fill-opacity="0.18"/><path d="M12 3.5c2.6 2.2 4.2 4.4 4.2 6.7 0 1.2-.7 2.1-1.8 2.1-1.3 0-2.2-.8-2.2-2 0-1.6 0-4.7-.2-6.8z" fill="#40A040" fill-opacity="0.3"/><path d="M12 3.5c-2.6 2.2-4.2 4.4-4.2 6.7 0 1.2.7 2.1 1.8 2.1 1.3 0 2.2-.8 2.2-2 0-1.6 0-4.7.2-6.8z" fill="#40A040" fill-opacity="0.18"/></svg>
+    </div>
+    <div class="leaf-divider-line"></div>
+  </div>
+
+  <!-- ── ROW B: Sales Analytics (alternating: phone left, text right) ── -->
+  <div class="feature-row-alt">
+    <div class="feature-row-inner feature-row-flip">
+      <!-- Phone — Dashboard/chart screen -->
+      <div class="feature-visual-left">
+        <div class="phone-wrap">
+          <div class="phone-outer-glow"></div>
+          <div class="phone">
+            <!-- <div class="ph-status">
+              <span class="ph-time">5:42</span>
+              <svg width="40" height="11" viewBox="0 0 40 11" fill="none" stroke="currentColor">
+                <rect x="0" y="3" width="3" height="8" rx="1"/>
+                <rect x="5" y="2" width="3" height="9" rx="1"/>
+                <rect x="10" y="1" width="3" height="10" rx="1"/>
+                <rect x="15" y="0" width="3" height="11" rx="1"/>
+                <path d="M21 5.5C23.5 3 29.5 3 32 5.5" stroke="currentColor" stroke-width="1.2" fill="none"/>
+                <path d="M23 7.5C24.5 6 28.5 6 30 7.5" stroke="currentColor" stroke-width="1.2" fill="none"/>
+                <circle cx="26.5" cy="9.5" r="1"/>
+                <rect x="35" y="1" width="4" height="9" rx="1" fill-opacity="0.35"/>
+                <rect x="35.5" y="1.5" width="3" height="8" rx="0.7"/>
+              </svg>
+            </div>
+            <div class="ph-nav"><div class="ph-logo">Halin</div></div>
+            <div class="ph-hr"></div> -->
+
+            <div class="ph-content ph-hero-chart-only">
+                <div class="ph-hero-badge" style="margin-top: 8px;">Live earnings</div>
+                <div class="ph-hero-main">
+                  <div>
+                    <div class="ph-hero-label">Today’s earnings</div>
+                    <div class="ph-hero-value">₱24,730</div>
+                    <div class="ph-hero-note">+18.4% from yesterday</div>
+                  </div>
+                  <!-- <span class="ph-hero-pill">+12%</span> -->
+                </div>
+                <div class="ph-stat-grid hero-mini-stats">
+                  <div class="ph-stat hero-stat-card">
+                    <div class="ph-stat-label">Transactions</div>
+                    <div class="ph-stat-value">18</div>
+                    <div class="ph-stat-note">+6 today</div>
+                  </div>
+                  <div class="ph-stat hero-stat-card">
+                    <div class="ph-stat-label">Items Sold</div>
+                    <div class="ph-stat-value">156</div>
+                    <div class="ph-stat-note">+13 today</div>
+                  </div>
+                </div>
+                <div class="ph-chart-card hero-chart-card">
+                  <div class="ph-chart-header">
+                    <span class="ph-chart-title">Earnings overview</span>
+                    <span class="ph-chart-filter">This week</span>
+                  </div>
+                  <svg class="hero-chart-svg" width="100%" viewBox="0 0 188 80" aria-label="Earnings chart" style="margin-bottom: 12px;" style="margin-bottom: 12px;">
+                    <defs>
+                      <linearGradient id="heroEarningsFillMobile" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#40A040" stop-opacity="0.28"/>
+                        <stop offset="100%" stop-color="#40A040" stop-opacity="0"/>
+                      </linearGradient>
+                    </defs>
+                    <line x1="0" y1="18" x2="188" y2="18" stroke="#1e2820" stroke-width="0.6" stroke-dasharray="3,3"/>
+                    <line x1="0" y1="38" x2="188" y2="38" stroke="#1e2820" stroke-width="0.6" stroke-dasharray="3,3"/>
+                    <line x1="0" y1="58" x2="188" y2="58" stroke="#1e2820" stroke-width="0.6" stroke-dasharray="3,3"/>
+                    <path class="hero-chart-area" d="M12,55 L40,60 L68,44 L96,12 L124,30 L152,40 L180,50 L180,64 L12,64 Z" fill="url(#heroEarningsFillMobile)"/>
+                    <polyline class="hero-chart-line" points="12,55 40,60 68,44 96,12 124,30 152,40 180,50" fill="none" stroke="#40A040" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+                    <circle cx="96" cy="12" r="4" fill="#40A040"/>
+                    <circle cx="12" cy="55" r="2.5" fill="#40A040"/>
+                    <circle cx="40" cy="60" r="2.5" fill="#40A040"/>
+                    <circle cx="68" cy="44" r="2.5" fill="#40A040"/>
+                    <circle cx="124" cy="30" r="2.5" fill="#40A040"/>
+                    <circle cx="152" cy="40" r="2.5" fill="#40A040"/>
+                    <circle cx="180" cy="50" r="2.5" fill="#40A040"/>
+                    <text x="12" y="76" text-anchor="middle" font-size="8" fill="#5a6b5c" font-family="Inter,system-ui">Sun</text>
+                    <text x="40" y="76" text-anchor="middle" font-size="8" fill="#5a6b5c" font-family="Inter,system-ui">Mon</text>
+                    <text x="68" y="76" text-anchor="middle" font-size="8" fill="#5a6b5c" font-family="Inter,system-ui">Tue</text>
+                    <text x="96" y="76" text-anchor="middle" font-size="8" fill="#5a6b5c" font-family="Inter,system-ui">Wed</text>
+                    <text x="124" y="76" text-anchor="middle" font-size="8" fill="#5a6b5c" font-family="Inter,system-ui">Thu</text>
+                    <text x="152" y="76" text-anchor="middle" font-size="8" fill="#5a6b5c" font-family="Inter,system-ui">Fri</text>
+                    <text x="180" y="76" text-anchor="middle" font-size="8" fill="#40A040" font-family="Inter,system-ui" font-weight="700">Sat</text>
+                  </svg>
+                </div>
+              </div>
+
+            <!-- Recent Transactions -->
+            <div class="ph-content" style="margin-top: -24px; margin-bottom: 12px;">
+              <div class="ph-chart-card" style="margin-bottom:0">
+                <div class="ph-chart-header" style="margin-bottom:8px">
+                  <span class="ph-chart-title">Recent Transactions</span>
+                  <span style="font-size:9px;color:#40A040">View All</span>
+                </div>
+                <div class="ph-txn">
+                  <div class="ph-txn-row">
+                    <div>
+                      <div class="ph-txn-tag" style="background: var(--green-pale2); color:#60b870">Cash</div>
+                      <div class="ph-txn-id">NKX8P6-2606118</div>
+                      <div class="ph-txn-meta">8:01 AM • Juan Dela Cruz</div>
+                    </div>
+                    <div><span style="font-size:14px;font-weight:700;color:var(--phone-green)">₱160.00</span></div>
+                  </div>
+                </div>
+                <div class="ph-txn">
+                  <div class="ph-txn-row">
+                    <div>
+                      <div class="ph-txn-tag">GCash</div>
+                      <div class="ph-txn-id">NKX8P6-2606117</div>
+                      <div class="ph-txn-meta">7:45 AM • Juan Dela Cruz</div>
+                    </div>
+                    <div><span style="font-size:14px;font-weight:700;color:var(--phone-green)">₱482.50</span></div>
+                  </div>
+                </div>
+                <div class="ph-txn">
+                  <div class="ph-txn-row">
+                    <div>
+                      <div class="ph-txn-tag" style="background:#d65a5a25;color:var(--phone-red)">Credit</div>
+                      <div class="ph-txn-id">NKX8P6-2606116</div>
+                      <div class="ph-txn-meta">7:42 AM • Juan Dela Cruz</div>
+                    </div>
+                    <div><span style="font-size:14px;font-weight:700;color:var(--text-muted)">₱96.00</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- <div class="ph-content"> -->
+              <!-- <div class="ph-section-title" style="margin-bottom:10px">Overview</div>
+              <div class="ph-stat-grid">
+                <div class="ph-stat"><div class="ph-stat-label">Gross Sales</div><div class="ph-stat-value ph-stat-value-sm">₱24,730</div></div>
+                <div class="ph-stat"><div class="ph-stat-label">Transactions</div><div class="ph-stat-value">8</div></div>
+                <div class="ph-stat"><div class="ph-stat-label">Items Sold</div><div class="ph-stat-value">34</div></div>
+                <div class="ph-stat"><div class="ph-stat-label">Avg. Order</div><div class="ph-stat-value ph-stat-value-sm">₱3,091</div></div>
+              </div>
+              <div class="ph-chart-card">
+                <div class="ph-chart-header">
+                  <span class="ph-chart-title">Sales Analytics</span>
+                  <span class="ph-chart-filter">This Week ▾</span>
+                </div>
+                <svg width="100%" viewBox="0 0 188 88" style="overflow:visible">
+                  <defs>
+                    <linearGradient id="kitaGrad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#40A040" stop-opacity="0.28"/>
+                      <stop offset="100%" stop-color="#40A040" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                  <line x1="0" y1="18" x2="188" y2="18" stroke="#1e2820" stroke-width="0.6" stroke-dasharray="3,3"/>
+                  <line x1="0" y1="38" x2="188" y2="38" stroke="#1e2820" stroke-width="0.6" stroke-dasharray="3,3"/>
+                  <line x1="0" y1="58" x2="188" y2="58" stroke="#1e2820" stroke-width="0.6" stroke-dasharray="3,3"/>
+                  <path d="M12,55 L40,60 L68,44 L96,12 L124,30 L152,40 L180,50 L180,64 L12,64 Z" fill="url(#kitaGrad)"/>
+                  <polyline points="12,55 40,60 68,44 96,12 124,30 152,40 180,50" fill="none" stroke="#40A040" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+                  <circle cx="96" cy="12" r="4" fill="#40A040" stroke="#141a15" stroke-width="1.5"/>
+                  <circle cx="12"  cy="55" r="2.5" fill="#40A040"/>
+                  <circle cx="40"  cy="60" r="2.5" fill="#40A040"/>
+                  <circle cx="68"  cy="44" r="2.5" fill="#40A040"/>
+                  <circle cx="124" cy="30" r="2.5" fill="#40A040"/>
+                  <circle cx="152" cy="40" r="2.5" fill="#40A040"/>
+                  <circle cx="180" cy="50" r="2.5" fill="#40A040"/>
+                  <rect x="56" y="2" width="80" height="16" rx="5" fill="#40A040"/>
+                  <text x="96" y="13" text-anchor="middle" font-size="8" fill="white" font-family="Inter,system-ui" font-weight="700">₱24,730.00</text>
+                  <text x="12"  y="78" text-anchor="middle" font-size="8" fill="#5a6b5c" font-family="Inter,system-ui">Su</text>
+                  <text x="40"  y="78" text-anchor="middle" font-size="8" fill="#5a6b5c" font-family="Inter,system-ui">Mo</text>
+                  <text x="68"  y="78" text-anchor="middle" font-size="8" fill="#5a6b5c" font-family="Inter,system-ui">Tu</text>
+                  <text x="96"  y="78" text-anchor="middle" font-size="8" fill="#40A040" font-family="Inter,system-ui" font-weight="700">We</text>
+                  <text x="124" y="78" text-anchor="middle" font-size="8" fill="#5a6b5c" font-family="Inter,system-ui">Th</text>
+                  <text x="152" y="78" text-anchor="middle" font-size="8" fill="#5a6b5c" font-family="Inter,system-ui">Fr</text>
+                  <text x="180" y="78" text-anchor="middle" font-size="8" fill="#5a6b5c" font-family="Inter,system-ui">Sa</text>
+                </svg>
+              </div> -->
+              
+              <!-- Critical stock -->
+              
+            <!-- </div> -->
+            <!-- <div class="ph-bottom-nav">
+              <div class="ph-nav-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="8" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="11" width="7" height="10" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>Overview</div>
+              <div class="ph-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 9h20"/></svg>Products</div>
+              <div class="ph-nav-item" aria-label="Cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 4h2l1.6 7.2a1 1 0 0 0 .97.8H16a1 1 0 0 0 .97-.79L18.4 9H6"/><circle cx="9.5" cy="19" r="1.25"/><circle cx="16.5" cy="19" r="1.25"/></svg></div>
+              <div class="ph-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg>History</div>
+              <div class="ph-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>More</div>
+            </div>
+            <div class="ph-gesture">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#333" stroke-width="1"><rect x="2" y="2" width="8" height="8" rx="1.2"/></svg>
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#333" stroke-width="1"><circle cx="6" cy="6" r="3.5"/></svg>
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#333" stroke-width="1"><path d="M7.5 2.5L4.5 6l3 3.5"/></svg>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="feature-text feature-text-right">
+        <div class="feature-tag">
+          Sales Analytics
+        </div>
+        <!-- EDIT: Feature B heading -->
+        <h2 class="feature-title">Real-time Daily<br/>Sales Insights</h2>
+        <!-- EDIT: Feature B body -->
+        <p class="feature-body">Because every transaction feeds your data directly, your earnings are automatically tracked. Beautiful, minimalist charts illustrate precisely how your cash flow grows, giving you deep visibility over daily store earnings at a single glance.</p>
+      </div>
+    </div>
+  </div><!-- end row B -->
+
+  <!-- Leaf divider between feature rows -->
+  <div class="leaf-divider" style="padding:0 40px" aria-hidden="true">
+    <div class="leaf-divider-line"></div>
+    <div class="leaf-divider-icons">
+      <svg class="leaf-divider-icon" width="22" height="15" viewBox="0 0 24 16" fill="none" aria-hidden="true"><path d="M12 2c-4 3-7 6-7 10 0 3 2 4 5 4s5-1 5-4c0-3-3-6-3-10z" fill="#40A040" fill-opacity="0.18"/><path d="M12 3.5c2.6 2.2 4.2 4.4 4.2 6.7 0 1.2-.7 2.1-1.8 2.1-1.3 0-2.2-.8-2.2-2 0-1.6 0-4.7-.2-6.8z" fill="#40A040" fill-opacity="0.34"/><path d="M12 3.5c-2.6 2.2-4.2 4.4-4.2 6.7 0 1.2.7 2.1 1.8 2.1 1.3 0 2.2-.8 2.2-2 0-1.6 0-4.7.2-6.8z" fill="#40A040" fill-opacity="0.18"/><path d="M11.8 5.2c-.7 1-.9 1.8-.9 2.8" stroke="#40A040" stroke-width="0.8" stroke-linecap="round" opacity="0.45"/></svg>
+      <svg class="leaf-divider-icon leaf-divider-icon--small" width="18" height="12" viewBox="0 0 24 16" fill="none" aria-hidden="true"><path d="M12 2c-4 3-7 6-7 10 0 3 2 4 5 4s5-1 5-4c0-3-3-6-3-10z" fill="#40A040" fill-opacity="0.18"/><path d="M12 3.5c2.6 2.2 4.2 4.4 4.2 6.7 0 1.2-.7 2.1-1.8 2.1-1.3 0-2.2-.8-2.2-2 0-1.6 0-4.7-.2-6.8z" fill="#40A040" fill-opacity="0.3"/><path d="M12 3.5c-2.6 2.2-4.2 4.4-4.2 6.7 0 1.2.7 2.1 1.8 2.1 1.3 0 2.2-.8 2.2-2 0-1.6 0-4.7.2-6.8z" fill="#40A040" fill-opacity="0.18"/></svg>
+      <svg class="leaf-divider-icon leaf-divider-icon--small" width="18" height="12" viewBox="0 0 24 16" fill="none" aria-hidden="true"><path d="M12 2c-4 3-7 6-7 10 0 3 2 4 5 4s5-1 5-4c0-3-3-6-3-10z" fill="#40A040" fill-opacity="0.18"/><path d="M12 3.5c2.6 2.2 4.2 4.4 4.2 6.7 0 1.2-.7 2.1-1.8 2.1-1.3 0-2.2-.8-2.2-2 0-1.6 0-4.7-.2-6.8z" fill="#40A040" fill-opacity="0.3"/><path d="M12 3.5c-2.6 2.2-4.2 4.4-4.2 6.7 0 1.2.7 2.1 1.8 2.1 1.3 0 2.2-.8 2.2-2 0-1.6 0-4.7.2-6.8z" fill="#40A040" fill-opacity="0.18"/></svg>
+    </div>
+    <div class="leaf-divider-line"></div>
+  </div>
+
+  <!-- ── ROW C: Inventory Low-Stock Alerts ── -->
+  <div class="feature-row">
+    <!-- Text -->
+    <div class="feature-text">
+      <div class="feature-tag">
+        Inventory Low-Stock Alert
+      </div>
+      <!-- EDIT: Feature C heading -->
+      <h2 class="feature-title">Smart Low-Stock<br/>Threshold Flags</h2>
+      <!-- EDIT: Feature C body -->
+      <p class="feature-body">As orders clear items off your shelves, inventory drops automatically. Set custom minimum safety counts for fast-moving items like snacks or sodas. The moment your inventory dips below that limit, Halin flags it so you can reorder stock early — before you lose a single sale.</p>
+    </div>
+
+    <!-- Phone — Products / inventory screen -->
+    <div class="feature-visual-right">
+      <div class="phone-wrap">
+        <div class="phone-outer-glow"></div>
+        <div class="phone">
+          <!-- <div class="ph-status">
+          <span class="ph-time">5:42</span>
+            <svg width="40" height="11" viewBox="0 0 40 11" fill="none" stroke="currentColor">
+              <rect x="0" y="3" width="3" height="8" rx="1"/>
+              <rect x="5" y="2" width="3" height="9" rx="1"/>
+              <rect x="10" y="1" width="3" height="10" rx="1"/>
+              <rect x="15" y="0" width="3" height="11" rx="1"/>
+              <path d="M21 5.5C23.5 3 29.5 3 32 5.5" stroke="currentColor" stroke-width="1.2" fill="none"/>
+              <path d="M23 7.5C24.5 6 28.5 6 30 7.5" stroke="currentColor" stroke-width="1.2" fill="none"/>
+              <circle cx="26.5" cy="9.5" r="1"/>
+              <rect x="35" y="1" width="4" height="9" rx="1" fill-opacity="0.35"/>
+              <rect x="35.5" y="1.5" width="3" height="8" rx="0.7"/>
+            </svg>
+          </div>
+          <div class="ph-nav"><div class="ph-logo">Halin</div></div>
+          <div class="ph-hr"></div> -->
+
+          <div class="ph-content">
+            <div class="ph-section-header">
+              <div>
+                <div class="ph-section-title" style="margin-top: 8px;">Products</div>
+                <div class="ph-section-sub">12 items</div>
+              </div>
+              <!-- <div class="ph-new-btn">New ▾</div> -->
+            </div>
+            <div class="ph-search">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="#4a5a4c" stroke-width="1.2"><circle cx="4" cy="4" r="3"/><line x1="6.5" y1="6.5" x2="9" y2="9"/></svg>
+              Search products...
+            </div>
+            <div class="ph-product">
+              <div><div class="ph-product-name">Central Brown Sugar 1/2kilo</div><div class="ph-product-price">₱400.00 / piece</div></div>
+              <div class="ph-stock ph-stock-low">Stocks: 4 ⚠</div>
+            </div>
+            <div class="ph-product">
+              <div><div class="ph-product-name">Coca-Cola 1.5L</div><div class="ph-product-price">₱75.00 / bottle</div></div>
+              <div class="ph-stock">Stocks: 48</div>
+            </div>
+            <div class="ph-product">
+              <div><div class="ph-product-name">Lucky Me! Pancit Canton</div><div class="ph-product-price">₱15.00 / pack</div></div>
+              <div class="ph-stock">Stocks: 120</div>
+            </div>
+            <div class="ph-product">
+              <div><div class="ph-product-name">Tide Detergent Bar</div><div class="ph-product-price">₱18.00 / bar</div></div>
+              <div class="ph-stock ph-stock-low">Stocks: 4 ⚠</div>
+            </div>
+            <div class="ph-product">
+              <div><div class="ph-product-name">Absolute Water</div><div class="ph-product-price">₱12.00 / bottle</div></div>
+              <div class="ph-stock">Stocks: 67</div>
+            </div>
+            <div class="ph-product">
+              <div><div class="ph-product-name">Sky Flakes Crackers</div><div class="ph-product-price">₱10.00 / pack</div></div>
+              <div class="ph-stock">Stocks: 85</div>
+            </div>
+            <div class="ph-product" style="margin-bottom: 12px;">
+              <div><div class="ph-product-name">Champion Detergent</div><div class="ph-product-price">₱22.00 / sachet</div></div>
+              <div class="ph-stock ph-stock-low">Stocks: 6 ⚠</div>
+            </div>
+          </div>
+
+          <!-- <div class="ph-bottom-nav">
+            <div class="ph-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="8" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="11" width="7" height="10" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>Overview</div>
+            <div class="ph-nav-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 9h20"/></svg>Products</div>
+            <div class="ph-nav-item" aria-label="Cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 4h2l1.6 7.2a1 1 0 0 0 .97.8H16a1 1 0 0 0 .97-.79L18.4 9H6"/><circle cx="9.5" cy="19" r="1.25"/><circle cx="16.5" cy="19" r="1.25"/></svg></div>
+            <div class="ph-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg>History</div>
+            <div class="ph-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>More</div>
+          </div>
+          <div class="ph-gesture">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#333" stroke-width="1"><rect x="2" y="2" width="8" height="8" rx="1.2"/></svg>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#333" stroke-width="1"><circle cx="6" cy="6" r="3.5"/></svg>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#333" stroke-width="1"><path d="M7.5 2.5L4.5 6l3 3.5"/></svg>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div><!-- end row C -->
+
+</section><!-- end features -->
+
+
+<!-- ════════════════════════════════════════
+     SECTION 4: TESTIMONIALS
+     ──────────────────────────────────────
+     Edit: section header, card quotes,
+     author names and locations
+════════════════════════════════════════ -->
+<section id="testimonials" class="section testimonials">
+  <div class="section-eyebrow">Real Stories</div>
+  <h2 class="section-title">Built for the Modern Philippine <span>Tindahan</span></h2>
+
+  <div class="testimonial-grid">
+
+    <!-- Card 1 -->
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-quote">"No more manual logbooks. Halin makes it so easy to punch in soft drink and snack orders while managing long lines of customers."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">AM</div>
+        <div>
+          <div class="testimonial-name">Aling Maria</div>
+          <div class="testimonial-location">Pasay City, Metro Manila</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-quote">"The inventory low-stock alerts saved my weekend sales. I knew exactly which items to reorder from the wholesale market before running out."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">MJ</div>
+        <div>
+          <div class="testimonial-name">Mang Juan</div>
+          <div class="testimonial-location">Cebu City, Cebu</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-quote">"Seeing our daily sales in clean charts showed us exactly which items bring in the most money. Highly recommend for growing stores!"</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">SH</div>
+        <div>
+          <div class="testimonial-name">Sari-Sari Hub</div>
+          <div class="testimonial-location">Quezon City, Metro Manila</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════
+     SECTION 5: FINAL CTA STRIP
+     ──────────────────────────────────────
+     Edit headline, description, form
+════════════════════════════════════════ -->
+<section id="final-cta" class="section final-cta">
+  <div class="final-cta-bg-glow" aria-hidden="true"></div>
+  <div class="section-eyebrow">Start Your Journey</div>
+  <h2 class="section-title">Join hundreds of store owners tracking<br/>their path to <span>asenso.</span></h2>
+  <p class="section-body">Ditch the paper listahan, automate your inventory, and unlock the true earning potential of your store with Halin.</p>
+  <div class="form-row" style="justify-content:center">
+    <!-- <input class="form-input" type="text" placeholder="Full Name" name="full_name_final"/>
+    <input class="form-input" type="text" placeholder="Phone Number or Email Address" name="contact_final"/> -->
+    <button class="btn-primary" type="submit">Secure My Early Access Slot</button>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════ -->
+<footer class="page-footer">
+  <span>© 2026 Halin. Built for Philippine MSMEs (Micro, Small, and Medium Enterprises)</span>
+  <span class="page-footer-tagline">
+    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><ellipse cx="6" cy="6" rx="5" ry="3" fill="#40A040" fill-opacity="0.35" transform="rotate(-20 6 6)"/></svg>
+    Gabay sa pag-asenso ng bawat tindahang Pilipino.
+  </span>
+  <span style="font-size: 12px; margin-top: 12px; display: block;">
+  </span>
+</footer>
+
+
+<!-- ════════════════════════════════════════
+     SCRIPTS
+════════════════════════════════════════ -->
+<script src="js/theme.js"></script>
+
+</body>
+</html>
