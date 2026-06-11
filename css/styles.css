@@ -5,7 +5,10 @@
 ═══════════════════════════════════════════ */
 
 /* ── Google Fonts ── */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Plus:wght@300;400;500;600;700;800&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@900;1000&display=swap');
+@import url('https://googleapis.com');
+
 
 /* ── Design Tokens ── */
 :root {
@@ -24,7 +27,7 @@
   --border-subtle:#E2E8F0;
 
   /* Light mode type */
-  --text-head:    #1A241C;
+  --text-head:    #14181B;
   --text-body:    #4A544C;
   --text-muted:   #94A3B8;
 
@@ -86,6 +89,7 @@ input, button { font-family: inherit; border: none; outline: none; cursor: point
   display: block;
   width: auto;
   height: 36px;
+  margin-bottom: 4px;
   object-fit: contain;
 }
 .logo-dark  { display: none; }
@@ -95,11 +99,11 @@ input, button { font-family: inherit; border: none; outline: none; cursor: point
 .logo-svg-inline { display: block; }
 
 .nav-logo-wordmark {
-  font-family: 'Nunito', sans-serif;
-  font-size: 25px;
-  font-weight: 900;
-  color: #1A241C;
-  margin-left: 8px;
+  font-family: 'Nunito';
+  font-size: 30px;
+  font-weight: 1000;
+  color: #14181B;
+  margin-left: 4px;
 }
 
 .nav-inner {
@@ -293,6 +297,7 @@ input, button { font-family: inherit; border: none; outline: none; cursor: point
   border-radius: 10px;
   background: var(--green);
   color: #fff;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.1px;
@@ -316,6 +321,7 @@ input, button { font-family: inherit; border: none; outline: none; cursor: point
   border: 1.5px solid var(--green);
   color: var(--green);
   background: transparent;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   font-size: 15px;
   font-weight: 600;
   transition: background 0.2s, color 0.2s, transform 0.15s;
@@ -345,6 +351,7 @@ input, button { font-family: inherit; border: none; outline: none; cursor: point
   align-items: center;
   gap: 8px;
   margin-bottom: 18px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 1.5px;
@@ -360,7 +367,8 @@ input, button { font-family: inherit; border: none; outline: none; cursor: point
 
 .hero-title {
   font-size: 42px;
-  font-weight: 800;
+  font-weight: 900;
+  font-family: 'Nunito', system-ui, -apple-system, sans-serif;
   line-height: 1.12;
   letter-spacing: -1.2px;
   color: var(--text-head);
@@ -466,6 +474,7 @@ input, button { font-family: inherit; border: none; outline: none; cursor: point
 }
 
 .section-eyebrow {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 2px;
@@ -476,7 +485,8 @@ input, button { font-family: inherit; border: none; outline: none; cursor: point
 
 .section-title {
   font-size: 32px;
-  font-weight: 800;
+  font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+  font-weight: 900;
   letter-spacing: -0.6px;
   color: var(--text-head);
   margin-bottom: 14px;
@@ -486,6 +496,7 @@ input, button { font-family: inherit; border: none; outline: none; cursor: point
 .section-title span { color: var(--green); }
 
 .section-body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   font-size: 15px;
   line-height: 1.75;
   color: var(--text-body);
@@ -551,6 +562,7 @@ input, button { font-family: inherit; border: none; outline: none; cursor: point
   display: inline-flex;
   align-items: center;
   gap: 7px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   font-size: 14px;
   font-weight: 900;
   letter-spacing: 1.5px;
@@ -891,6 +903,7 @@ input, button { font-family: inherit; border: none; outline: none; cursor: point
 }
 
 .ph-hero-value {
+  font-family: 'Nunito', system-ui, -apple-system, sans-serif;
   font-size: 24px;
   line-height: 1.1;
   font-weight: 800;
@@ -974,7 +987,7 @@ input, button { font-family: inherit; border: none; outline: none; cursor: point
   padding: 10px 12px;
 }
 .ph-stat-label { font-size: 9px; color: var(--phone-text-muted); margin-top: 3px; }
-.ph-stat-value { font-size: 13px; font-weight: 700; color: var(--phone-text); margin-top: 2px; }
+.ph-stat-value { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 700; color: var(--phone-text); margin-top: 2px; }
 .ph-stat-value-sm { font-size: 10px; }
 
 /* Chart card */
@@ -990,7 +1003,7 @@ input, button { font-family: inherit; border: none; outline: none; cursor: point
   align-items: center;
   margin-bottom: 10px;
 }
-.ph-chart-title { font-size: 11px; font-weight: 700; color: var(--phone-text); }
+.ph-chart-title { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 700; color: var(--phone-text); }
 .ph-chart-filter { font-size: 9px; color: var(--phone-text-muted); }
 
 /* Product list */
