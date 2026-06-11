@@ -46,6 +46,10 @@ body.dark {
   --phone-tag-gcash-fg:#60b870;
 }
 
+body.dark .logo-light { display: none; }
+body.dark .logo-dark  { display: block; }
+body.dark .nav-logo-wordmark { color: #F1F5F2; }
+
 /* Nav glass */
 body.dark .nav {
   background: rgba(13,17,14,0.92);
