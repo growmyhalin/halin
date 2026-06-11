@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Halin — Smart Inventory & Sales for Philippine Sari-Sari Stores and other MSMEs</title>
+  <meta name="description" content="Halin replaces your paper listahan with a living digital workspace. Track sales, flag low-stock products, and power fast checkout — all from one simple app."/>
+  <link rel="stylesheet" href="../css/styles.css"/>
+  <link rel="stylesheet" href="../css/dark.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap" rel="stylesheet"/>
+  <link rel="icon" type="image/x-icon" href="../favicon.ico"/>
+
+  <style>
+    /* Status feedback text config */
+    #statusMessage {
+        margin-top: 16px;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: center;
+        /* Hides the field initially out of view */
+        display: none; 
+        padding: 10px;
+        border-radius: 6px;
+    }
+    
+    /* Utility style to make the feedback element visible on completion */
+    #statusMessage.visible {
+        display: block !important;
+    }
+
+    /* Strict override class to keep it hidden until submission */
+    .hidden-msg {
+        display: none !important;
+    }
+
+    .form-input {
+        width: 100% !important;
+        box-sizing: border-box; /* Crucial: ensures internal padding doesn't push fields off-screen */
+    }
+
+     /* CSS Fade-in animation to make the final confirmation screen feel incredibly premium */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.96) translateY(5px); }
+        to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════ -->
+<header>
+  <nav class="nav">
+    <!-- Logo -->
+    <a href="#" class="nav-logo" aria-label="Halin home">
+      <img src="../assets/logo-dark.png" alt="Halin" class="nav-logo-img logo-light" height="36"/>
+      <img src="../assets/logo-light.png"  alt="Halin" class="nav-logo-img logo-dark"  height="36"/>
+      <span class="nav-logo-wordmark">Halin</span>
+    </a>
+
+    <!-- Right controls -->
+    <div class="nav-right">
+        <a href="../index.html" class="nav-link-item active">Back to Home</a>
+    </div>
+</header>
+
+
+<!-- ════════════════════════════════════════
+     SECTION 2: EARLY ACCESS
+     ──────────────────────────────────────
+     Edit: section-title, section-body,
+     form placeholder labels, btn text
+════════════════════════════════════════ -->
+<section id="early-access" class="section early-access">
+  <div class="section-eyebrow">Sign up for Early Access</div>
+  <div class="form-row" style="justify-content:center">
+    
+    <form id="earlyAccessForm" style="display: flex; flex-direction: column; max-width: 400px; width: 100%; min-height: 350px; justify-content: center;">
+        
+        <!-- 1. The Hidden Success Card Placeholder Container -->
+        <div id="successCard" style="display: none; text-align: center; font-family: 'Plus Jakarta Sans', sans-serif; animation: fadeIn 0.4s ease-out;">
+            <!-- Big Circle with Checkmark -->
+            <div style="width: 80px; height: 80px; background-color: #eefaf2; border: 3px solid #4cae68; color: #4cae68; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; font-size: 40px; font-weight: bold;">
+                ✓
+            </div>
+            <!-- Bold Title Heading -->
+            <h2 class="section-title" style="color: var(--phone-green)">Thank you!</h2>
+            <!-- Body Message Copy -->
+            <p class="section-body">
+                Your slot registration application has been securely received. Please check your mobile messages or email inbox for your registration announcement and slot verification status details.
+            </p>
+        </div>
+
+        <!-- 2. The Input Fields Box Container (Disappears on success) -->
+        <div id="formFieldsContainer" style="display: flex; flex-direction: column; gap: 12px; width: 100%;">
+            <h2 class="section-title" style="margin-top:0;">You're one step closer to tracking your <b style="color: var(--phone-green)">growth.</b></h2>
+            <p class="section-body">Be among the first Philippine micro-retailers to go digital. Secure your early access today.</p>
+            
+            <div class="input-group">
+                <label for="fullName">Full Name</label>
+                <input class="form-input contact-input" id="fullName" type="text" placeholder="Juan Dela Cruz" name="full_name" required maxlength="100"/>
+            </div>
+            
+            <div class="input-group">
+                <label for="phoneNumber">Mobile Number</label>
+                <input class="form-input contact-input" id="phoneNumber" type="tel" placeholder="0928-234-9879" name="phone" required maxlength="13"/>
+            </div>
+            
+            <div class="input-group">
+                <label for="emailAddress">Email Address <span class="optional-badge">(Optional)</span></label>
+                <input class="form-input contact-input" id="emailAddress" type="email" placeholder="sample@email.com" name="email" maxlength="100"/>
+            </div>
+
+            <div style="display: none !important;" aria-hidden="true">
+                <input type="text" id="honeyPotField" autocomplete="off" tabindex="-1" />
+            </div>
+
+            <button class="btn-primary" type="submit" style="margin-top: 8px;">Submit</button>
+        </div>
+        
+    </form>
+
+  </div>
+</section>
+
+
+
+
+<!-- Leaf divider -->
+<div class="leaf-divider" aria-hidden="true">
+  <div class="leaf-divider-line"></div>
+  <div class="leaf-divider-icons">
+    <svg class="leaf-divider-icon" width="22" height="15" viewBox="0 0 24 16" fill="none" aria-hidden="true"><path d="M12 2c-4 3-7 6-7 10 0 3 2 4 5 4s5-1 5-4c0-3-3-6-3-10z" fill="#40A040" fill-opacity="0.18"/><path d="M12 3.5c2.6 2.2 4.2 4.4 4.2 6.7 0 1.2-.7 2.1-1.8 2.1-1.3 0-2.2-.8-2.2-2 0-1.6 0-4.7-.2-6.8z" fill="#40A040" fill-opacity="0.34"/><path d="M12 3.5c-2.6 2.2-4.2 4.4-4.2 6.7 0 1.2.7 2.1 1.8 2.1 1.3 0 2.2-.8 2.2-2 0-1.6 0-4.7.2-6.8z" fill="#40A040" fill-opacity="0.18"/><path d="M11.8 5.2c-.7 1-.9 1.8-.9 2.8" stroke="#40A040" stroke-width="0.8" stroke-linecap="round" opacity="0.45"/></svg>
+    <svg class="leaf-divider-icon leaf-divider-icon--small" width="18" height="12" viewBox="0 0 24 16" fill="none" aria-hidden="true"><path d="M12 2c-4 3-7 6-7 10 0 3 2 4 5 4s5-1 5-4c0-3-3-6-3-10z" fill="#40A040" fill-opacity="0.18"/><path d="M12 3.5c2.6 2.2 4.2 4.4 4.2 6.7 0 1.2-.7 2.1-1.8 2.1-1.3 0-2.2-.8-2.2-2 0-1.6 0-4.7-.2-6.8z" fill="#40A040" fill-opacity="0.3"/><path d="M12 3.5c-2.6 2.2-4.2 4.4-4.2 6.7 0 1.2.7 2.1 1.8 2.1 1.3 0 2.2-.8 2.2-2 0-1.6 0-4.7.2-6.8z" fill="#40A040" fill-opacity="0.18"/></svg>
+    <svg class="leaf-divider-icon leaf-divider-icon--small" width="18" height="12" viewBox="0 0 24 16" fill="none" aria-hidden="true"><path d="M12 2c-4 3-7 6-7 10 0 3 2 4 5 4s5-1 5-4c0-3-3-6-3-10z" fill="#40A040" fill-opacity="0.18"/><path d="M12 3.5c2.6 2.2 4.2 4.4 4.2 6.7 0 1.2-.7 2.1-1.8 2.1-1.3 0-2.2-.8-2.2-2 0-1.6 0-4.7-.2-6.8z" fill="#40A040" fill-opacity="0.3"/><path d="M12 3.5c-2.6 2.2-4.2 4.4-4.2 6.7 0 1.2.7 2.1 1.8 2.1 1.3 0 2.2-.8 2.2-2 0-1.6 0-4.7.2-6.8z" fill="#40A040" fill-opacity="0.18"/></svg>
+  </div>
+  <div class="leaf-divider-line"></div>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════ -->
+<footer class="page-footer">
+  <span class="page-footer-tagline-left">
+    © 2026 Halin. Built for Philippine MSMEs (Micro, Small, and Medium Enterprises)
+  </span>
+  <span class="page-footer-tagline-right">
+    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><ellipse cx="6" cy="6" rx="5" ry="3" fill="#40A040" fill-opacity="0.35" transform="rotate(-20 6 6)"/></svg>
+    Gabay sa pag-asenso ng bawat tindahang Pilipino.
+  </span>
+  <span style="font-size: 12px; margin-top: 12px; display: block;">
+  </span>
+</footer>
+
+
+<!-- ════════════════════════════════════════
+     SCRIPTS
+════════════════════════════════════════ -->
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, serverTimestamp } from "https://gstatic.com/firebasejs/12.14.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyBY0baybSfaEJeB25b2Lec86Mmy0rCkB6Y",
+        authDomain: "://firebaseapp.com",
+        projectId: "halin-dev-35ea5",
+        storageBucket: "halin-dev-35ea5.firebasestorage.app",
+        messagingSenderId: "1055087245802",
+        appId: "1:1055087245802:web:5ab6cad4021f5fbbb99a93",
+        measurementId: "G-C6BPW6E49R"
+    };
+
+    // 1. Initialize custom app namespace context container profile map
+    const app = initializeApp(firebaseConfig, "earlyAccessSubpageInstance");
+    const db = getFirestore(app);
+
+    // 2. Fetch specific layout block targets
+    const targetForm = document.getElementById("earlyAccessForm");
+    const phoneInput = document.getElementById("phoneNumber");
+    const statusMessage = document.getElementById("statusMessage");
+
+    let isAutoFormatting = false;
+
+    // --- Phone Number Layout Auto-Formatter (0928-234-9879) ---
+    if (phoneInput) {
+        phoneInput.addEventListener("input", (e) => {
+            isAutoFormatting = true;
+            let value = e.target.value.replace(/\D/g, "");
+            let formattedValue = "";
+
+            if (value.length > 0) formattedValue += value.substring(0, 4);
+            if (value.length > 4) formattedValue += "-" + value.substring(4, 7);
+            if (value.length > 7) formattedValue += "-" + value.substring(7, 11);
+
+            e.target.value = formattedValue;
+            isAutoFormatting = false;
+        });
+    }
+
+    // --- Secure Form Submission Handler with 1-Second Loading Guard ---
+    if (targetForm) {
+        targetForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const fullNameValue = document.getElementById("fullName")?.value.trim() || "";
+            const phoneInputValue = phoneInput?.value.trim() || "";
+            const emailInputValue = document.getElementById("emailAddress")?.value.trim() || "";
+            const botCheck = document.getElementById("honeyPotField")?.value || "";
+            
+            const fieldsContainer = document.getElementById("formFieldsContainer");
+            const successCard = document.getElementById("successCard");
+            
+            // Target the submit button inside the active form
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+
+            if (!fullNameValue || !phoneInputValue) return;
+
+            const transitionToSuccess = () => {
+                if (fieldsContainer) fieldsContainer.style.display = "none"; 
+                if (successCard) successCard.style.display = "block";       
+            };
+
+            // 1. Visually lock the button and inject a loading animation state instantly
+            if (submitBtn) {
+                submitBtn.disabled = true; // Prevents any further user clicks or taps
+                submitBtn.style.opacity = "0.7";
+                submitBtn.style.cursor = "not-allowed";
+                // Uses a clean CSS loading circle emoji animation alongside text
+                submitBtn.innerHTML = `<span class="spinner" style="display: inline-block; margin-right: 8px; animation: spin 1s linear infinite;">⃝</span> Submitting...`;
+            }
+
+            // Helper delay function to hold execution for exactly 1000ms (1 second)
+            const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+            if (botCheck.length > 0) {
+                await delay(1000); // Maintain structural timing for bots
+                transitionToSuccess();
+                targetForm.reset();
+                return; 
+            }
+
+            const cleanPhoneNumber = phoneInputValue.replace(/\D/g, "");
+
+            // EXACT STRUCTURAL KEY PAYLOAD ALIGNMENT (No changes applied here)
+            const submissionData = {
+                full_name: fullNameValue,
+                phone: cleanPhoneNumber,
+                email: emailInputValue || null,
+                created_date: serverTimestamp()
+            };
+
+            try {
+                // 2. Enforce the required 1-second visual loading delay pause anchor
+                await delay(1000);
+
+                // 3. Upload data models directly into your active Firestore database bucket
+                await addDoc(collection(db, "early_access_email"), submissionData);
+                
+                // Execute layout transition smoothly on success
+                transitionToSuccess();
+                
+            } catch (error) {
+                console.error("Submission blocked: ", error);
+                alert("Submission failed. Error: " + error.message);
+                
+                // 4. Restore the button layout to normal if the cloud network upload throws an error
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.style.opacity = "1";
+                    submitBtn.style.cursor = "pointer";
+                    submitBtn.innerText = "Submit";
+                }
+            }
+        });
+    }
+</script>
+
+<script src="../js/theme.js" defer></script>
+</body>
+</html>

@@ -39,7 +39,7 @@
   --phone-bg:          #edf3ee;
   --phone-nav-bg:      #f4f7f5;
   --phone-card:        #ffffff;
-  --phone-border:      rgba(19, 28, 22, 0.12);
+  --phone-border:      #5c5e5c1f;
   --phone-text:        #142117;
   --phone-text-muted:  #5b6a62;
   --phone-text-body:   #314039;
@@ -519,7 +519,7 @@ input, button { font-family: inherit; border: none; outline: none; cursor: point
   border-radius: 10px;
   font-size: 14px;
   background: var(--bg-card);
-  border: 1.5px solid var(--border);
+  border: 1.5px solid var(--text-muted);
   color: var(--text-head);
   transition: border-color 0.2s, background 0.3s, color 0.3s;
 }
@@ -1190,6 +1190,42 @@ input, button { font-family: inherit; border: none; outline: none; cursor: point
   justify-content: space-around;
   padding: 6px 20px 8px;
   background: var(--phone-bg);
+}
+
+/* Form */
+.input-group {
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #444b54;
+    margin-bottom: 6px;
+}
+
+.optional-badge {
+    color: #888888;
+    font-weight: 400;
+    font-size: 11px;
+}
+
+.optional-badge {
+    color: #888888;
+    font-weight: 400;
+    font-size: 11px;
+}
+
+/* Spacer */
+.spacer {
+    flex: 1; 
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Optional: Centers your form inside the empty space */
+    align-items: center;
 }
 
 /* ═══════════════════════════

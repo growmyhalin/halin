@@ -6,10 +6,10 @@
 
 const STORAGE_KEY = 'halin-theme';
 
-const toggleBtn   = document.getElementById('theme-toggle');
-const body        = document.body;
-const themeIcon   = document.getElementById('theme-icon');
-const hamburger   = document.getElementById('hamburger');
+const toggleBtn    = document.getElementById('theme-toggle');
+const body         = document.body;
+const themeIcon    = document.getElementById('theme-icon');
+const hamburger    = document.getElementById('hamburger');
 const mobileDrawer = document.getElementById('mobile-drawer');
 
 /* ── Apply saved theme on load ── */
@@ -19,11 +19,13 @@ const mobileDrawer = document.getElementById('mobile-drawer');
   else applyLight();
 })();
 
-/* ── Toggle handler ── */
-toggleBtn.addEventListener('click', () => {
-  if (body.classList.contains('dark')) applyLight();
-  else applyDark();
-});
+/* ── Toggle handler (Cleaned & Restored to your original target ID) ── */
+if (toggleBtn) {
+  toggleBtn.addEventListener('click', () => {
+    if (body.classList.contains('dark')) applyLight();
+    else applyDark();
+  });
+}
 
 function applyDark() {
   body.classList.add('dark');
@@ -37,17 +39,19 @@ function applyLight() {
   if (themeIcon) themeIcon.textContent = '🌙';
 }
 
-/* ── Mobile hamburger ── */
-hamburger.addEventListener('click', () => {
-  mobileDrawer.classList.toggle('open');
-});
-
-/* Close drawer on link click */
-mobileDrawer.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    mobileDrawer.classList.remove('open');
+/* ── Mobile hamburger (Added a null check to prevent app crashes on other pages) ── */
+if (hamburger && mobileDrawer) {
+  hamburger.addEventListener('click', () => {
+    mobileDrawer.classList.toggle('open');
   });
-});
+
+  /* Close drawer on link click */
+  mobileDrawer.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileDrawer.classList.remove('open');
+    });
+  });
+}
 
 function initHeroOdometer() {
   const labels = ['Sari-Sari Store,', 'Pharmacy,', 'Hardware,'];
@@ -68,16 +72,26 @@ function initHeroOdometer() {
 
 initHeroOdometer();
 
-/* ── Smooth active nav link ── */
+/* ── Smooth active nav link (Debounced and Protected against Layout Input Shifting) ── */
 const sections = document.querySelectorAll('section[id]');
 const navLinks  = document.querySelectorAll('.nav-link-item');
 
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(sec => {
-    if (window.scrollY >= sec.offsetTop - 80) current = sec.id;
-  });
-  navLinks.forEach(link => {
-    link.classList.toggle('active', link.getAttribute('href') === '#' + current);
-  });
-}, { passive: true });
+// Only register the scroll computations if sections and nav links actually exist on this screen
+if (sections.length > 0 && navLinks.length > 0) {
+  let scrollTimeout;
+  window.addEventListener('scroll', () => {
+    // Debounce the calculation slightly to keep performance completely smooth
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      let current = '';
+      sections.forEach(sec => {
+        if (window.scrollY >= sec.offsetTop - 120) {
+          current = sec.id;
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+      });
+    }, 50); // Minimal delay prevents collision with text box focus loops
+  }, { passive: true });
+}
