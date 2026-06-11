@@ -76,7 +76,8 @@
   <div class="section-eyebrow">Sign up for Early Access</div>
   <div class="form-row" style="justify-content:center">
     
-    <form id="earlyAccessForm" style="display: flex; flex-direction: column; max-width: 400px; width: 100%; min-height: 350px; justify-content: center;">
+    <!-- Native action rule prevents fields from jumping straight onto your URL string -->
+    <form id="earlyAccessForm" action="javascript:void(0);" style="display: flex; flex-direction: column; max-width: 400px; width: 100%; min-height: 350px; justify-content: center; box-sizing: border-box;">
         
         <!-- 1. The Hidden Success Card Placeholder Container -->
         <div id="successCard" style="display: none; text-align: center; font-family: 'Plus Jakarta Sans', sans-serif; animation: fadeIn 0.4s ease-out;">
@@ -160,7 +161,7 @@
 ════════════════════════════════════════ -->
 <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
-    import { getFirestore, collection, addDoc, serverTimestamp } from "https://gstatic.com/firebasejs/12.14.0/firebase-firestore.js";
+    import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-firestore.js";
 
     const firebaseConfig = {
         apiKey: "AIzaSyBY0baybSfaEJeB25b2Lec86Mmy0rCkB6Y",
