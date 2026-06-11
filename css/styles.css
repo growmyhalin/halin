@@ -99,7 +99,7 @@ input, button { font-family: inherit; border: none; outline: none; cursor: point
 .logo-svg-inline { display: block; }
 
 .nav-logo-wordmark {
-  font-family: 'Nunito';
+  font-family: 'Nunito', system-ui, -apple-system, sans-serif;
   font-size: 30px;
   font-weight: 1000;
   color: #14181B;
