@@ -95,11 +95,11 @@ input, button { font-family: inherit; border: none; outline: none; cursor: point
 .logo-svg-inline { display: block; }
 
 .nav-logo-wordmark {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Nunito';
   font-size: 25px;
-  font-weight: 800;
-  letter-spacing: -0.5px;
+  font-weight: 900;
   color: #1A241C;
+  margin-left: 8px;
 }
 
 .nav-inner {
