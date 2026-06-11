@@ -95,7 +95,7 @@ input, button { font-family: inherit; border: none; outline: none; cursor: point
 .logo-svg-inline { display: block; }
 
 .nav-logo-wordmark {
-  font-family: 'Nunito';
+  font-family: 'Nunito', sans-serif;
   font-size: 25px;
   font-weight: 900;
   color: #1A241C;
@@ -939,9 +939,12 @@ input, button { font-family: inherit; border: none; outline: none; cursor: point
 }
 
 .hero-chart-line {
-  stroke-dasharray: 180;
-  stroke-dashoffset: 180;
-  animation: heroLineDraw 1.4s ease forwards;
+  stroke: var(--green);
+  stroke-width: 1.5px;
+  fill: none;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: heroLineDraw 4s ease forwards;
 }
 
 .hero-chart-area {
