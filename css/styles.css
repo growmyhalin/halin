@@ -730,6 +730,22 @@ input, button { font-family: inherit; border: none; outline: none; cursor: point
   font-weight: 600;
 }
 
+/* Add a class to your footer SVG to target the animation */
+.page-rotating-leaf {
+  animation: spinLeaf 4s linear infinite;
+  transform-origin: center; /* Ensures it rotates around its own center axis */
+}
+
+/* Define the rotation animation path */
+@keyframes spinLeaf {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /* ═══════════════════════════
    PHONE MOCKUP COMPONENT
    ─────────────────────────
