@@ -531,6 +531,8 @@ input, button { font-family: inherit; border: none; outline: none; cursor: point
 ═══════════════════════════ */
 .features { background: var(--bg); transition: background 0.3s; }
 
+.feature-header { background: var(--bg); transition: background 0.3s; align-items: center; text-align: center; padding: 64px 40px; }
+
 .feature-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
