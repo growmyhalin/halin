@@ -143,6 +143,7 @@ input, button { font-family: inherit; border: none; outline: none; cursor: point
   display: flex;
   align-items: center;
   gap: 16px;
+  font-size: 14px;
 }
 
 /* Theme toggle */
