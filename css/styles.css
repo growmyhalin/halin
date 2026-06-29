@@ -102,7 +102,7 @@ input, button { font-family: inherit; border: none; outline: none; cursor: point
   font-family: 'Nunito', system-ui, -apple-system, sans-serif;
   font-size: 30px;
   font-weight: 1000;
-  color: #14181B;
+  color: var(--green) !important;
   margin-left: 4px;
 }
 
