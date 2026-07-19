@@ -28,6 +28,8 @@ body.dark {
   --green-light:  #5CC45C;
   --green-pale2:  rgba(64,160,64,0.12);
   --green-border: rgba(64,160,64,0.2);
+  --hero-title-gradient: linear-gradient(90deg, #8fe68f 0%, #5CC45C 50%, #40A040 100%);
+  --hero-overlay-gradient: linear-gradient(90deg, rgba(13,17,14,0.9) 0%, rgba(13,17,14,0.74) 28%, rgba(13,17,14,0.54) 58%, rgba(13,17,14,0.28) 78%, rgba(13,17,14,0) 100%);
 
   /* Phone screen palette for dark mode */
   --phone-bg:          #0f1410;

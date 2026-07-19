@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Halin — Login</title>
+  <meta name="description" content="Continue to your Halin workspace through the embedded login experience."/>
+  <link rel="stylesheet" href="../css/styles.css"/>
+  <link rel="stylesheet" href="../css/dark.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap" rel="stylesheet"/>
+  <link rel="icon" type="image/x-icon" href="../favicon.ico"/>
+</head>
+<body class="workspace-page">
+  <header>
+    <nav class="nav">
+      <a href="../index.html" class="nav-logo" aria-label="Halin home">
+        <img src="../assets/halin-logo.png" alt="Halin" class="nav-logo-img logo-light" height="36"/>
+        <img src="../assets/halin-logo.png" alt="Halin" class="nav-logo-img logo-dark" height="36"/>
+        <span class="nav-logo-wordmark">Halin</span>
+      </a>
+      <p class="mobile-brand-copy"><span class="mobile-brand-copy__icon" aria-hidden="true">i</span> Install for a faster, smoother experience on the go.</p>
+
+      <div class="nav-right">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <div class="theme-toggle-knob">
+            <span id="theme-icon" class="theme-icon" aria-hidden="true">🌙</span>
+          </div>
+        </button>
+        <a href="../index.html" class="nav-link-item">Back to Home</a>
+        <button class="btn-primary install-banner__button mobile-install-btn" id="mobileInstallPwaBtn" type="button" style="margin-top: 0px;">Install</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="webview-page">
+    <section class="webview-shell">
+      <div class="section-eyebrow">Member Login</div>
+      <h1 class="section-title">Continue to your Halin workspace</h1>
+      <p class="section-body">Use the embedded experience below to sign in to your Halin account.</p>
+
+      <div class="install-banner" id="installBanner">
+        <div class="install-banner__desktop-copy">
+          <strong>Install Halin</strong>
+          <span id="installBannerMessage">Use this button to install the app on your device.</span>
+        </div>
+        <button class="btn-primary install-banner__button" id="installPwaBtn" type="button">Install on your device</button>
+      </div>
+
+      <div class="webview-frame-wrap">
+        <iframe
+          class="webview-frame"
+          src="https://halin-q03p1z.flutterflow.app"
+          title="Halin Login"
+          loading="eager"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="clipboard-write; fullscreen"
+        ></iframe>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/theme.js"></script>
+  <script>
+    const PWA_URL = 'https://halin-q03p1z.flutterflow.app';
+    const installButtons = Array.from(document.querySelectorAll('.install-banner__button'));
+    const installMessage = document.getElementById('installBannerMessage');
+    let deferredPrompt = null;
+
+    const updateInstallStatus = (message) => {
+      if (installMessage) installMessage.textContent = message;
+    };
+
+    window.addEventListener('beforeinstallprompt', (event) => {
+      event.preventDefault();
+      deferredPrompt = event;
+      updateInstallStatus('Your browser can install this app on your device.');
+    });
+
+    window.addEventListener('appinstalled', () => {
+      deferredPrompt = null;
+      updateInstallStatus('Installed successfully.');
+      installButtons.forEach((button) => {
+        button.textContent = 'Installed';
+        button.disabled = true;
+      });
+    });
+
+    async function installPwaApp() {
+      if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone) {
+        updateInstallStatus('This app is already installed on your device.');
+        return;
+      }
+
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        const choice = await deferredPrompt.userChoice;
+        if (choice.outcome === 'accepted') {
+          updateInstallStatus('Installing…');
+        } else {
+          updateInstallStatus('Install cancelled.');
+        }
+        deferredPrompt = null;
+        return;
+      }
+
+      window.open(PWA_URL, '_blank', 'noopener,noreferrer');
+      updateInstallStatus('Opening the app in a new tab. If prompted, choose Install app from your browser menu.');
+    }
+
+    installButtons.forEach((button) => {
+      button.addEventListener('click', installPwaApp);
+    });
+  </script>
+</body>
+</html>
