@@ -482,7 +482,7 @@ input, button { font-family: inherit; border: none; outline: none; cursor: point
   align-items: center;
   justify-content: center;
   margin-left: -8px;
-  border: 2px solid var(--hero-avatar-border);
+  border: 2px solid var(--hero-chip-border);
   background: var(--hero-avatar-bg);
   color: var(--hero-avatar-color);
   transition: border-color 0.3s;
