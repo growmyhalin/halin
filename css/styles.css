@@ -1544,7 +1544,7 @@ input, button { font-family: inherit; border: none; outline: none; cursor: point
     font-weight: 400;
     color: var(--text-head);
     line-height: 1.3;
-    max-width: 220px;
+    max-width: 240px;
   }
 
   .workspace-page .mobile-brand-copy__icon {
@@ -1576,7 +1576,7 @@ input, button { font-family: inherit; border: none; outline: none; cursor: point
   }
 
   .workspace-page .webview-shell {
-    width: 100%;
+    width: 90%;
     gap: 0;
     display: contents;
   }
