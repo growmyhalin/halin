@@ -67,7 +67,7 @@ function initHeroOdometer() {
       item.textContent = labels[current];
       wrapper.classList.remove('slot-flip');
     }, 240);
-  }, 2400);
+  }, 1400);
 }
 
 initHeroOdometer();
