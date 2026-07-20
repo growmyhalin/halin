@@ -515,6 +515,14 @@ input, button { font-family: inherit; border: none; outline: none; cursor: point
   transition: background 0.3s;
 }
 
+.early-access {
+  background: var(--phone-card);
+  padding: 64px 40px;
+  text-align: center;
+  position: relative;
+  transition: background 0.3s;
+}
+
 .section-eyebrow {
   font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   font-size: 14px;
@@ -1633,6 +1641,7 @@ input, button { font-family: inherit; border: none; outline: none; cursor: point
   .leaf-divider { padding: 0 20px; }
 
   .features-overview { padding: 40px 20px; }
+  .early-access { padding: 40px 20px; }
   .form-row { flex-direction: column; }
   .form-input { min-width: 0; width: 100%; }
 
