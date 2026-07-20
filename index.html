@@ -27,7 +27,7 @@
     <!-- Desktop nav links -->
     <div class="nav-links">
       <a href="#" class="nav-link-item active">Home</a>
-      <a href="#early-access" class="nav-link-item">Early Access</a>
+      <a href="#features-overview" class="nav-link-item">Early Access</a>
       <a href="#features" class="nav-link-item">Features</a>
       <a href="#testimonials" class="nav-link-item">Stories</a>
       <a href="#final-cta" class="nav-link-item">Start Your Journey</a>
@@ -58,7 +58,7 @@
   <!-- Mobile drawer -->
   <div class="mobile-drawer" id="mobile-drawer">
     <a href="#home">Home</a>
-    <a href="#early-access">Early Access</a>
+    <a href="#features-overview">Early Access</a>
     <a href="#features">Features</a>
     <a href="#testimonials">Stories</a>
     <a href="#final-cta">Start Your Journey</a>
@@ -101,74 +101,20 @@
     <!-- Text column -->
     <div class="hero-text">
 
-      <!-- <div class="hero-visual hero-visual-mobile" aria-label="Earnings preview">
-        <div class="hero-glow"></div>
-        <div class="phone phone-lg hero-chart-phone">
-          <div class="ph-content ph-hero-chart-only">
-            <div class="ph-hero-badge" style="margin-top: 8px;">Live earnings</div>
-            <div class="ph-hero-main">
-              <div>
-                <div class="ph-hero-label">Today’s earnings</div>
-                <div class="ph-hero-value">₱24,730</div>
-                <div class="ph-hero-note" style="color: var(--phone-green)">+18.4% from yesterday</div>
-              </div>
-            </div>
-            <div class="ph-stat-grid hero-mini-stats">
-              <div class="ph-stat hero-stat-card">
-                <div class="ph-stat-label">Transactions</div>
-                <div class="ph-stat-value">18</div>
-                <div class="ph-stat-note">+6 from</div>
-              </div>
-              <div class="ph-stat hero-stat-card">
-                <div class="ph-stat-label">Items Sold</div>
-                <div class="ph-stat-value">156</div>
-                <div class="ph-stat-note">+13 from yesterday</div>
-              </div>
-            </div>
-            <div class="ph-chart-card hero-chart-card">
-              <div class="ph-chart-header">
-                <span class="ph-chart-title">Earnings overview</span>
-                <span class="ph-chart-filter">This week</span>
-              </div>
-              <svg class="hero-chart-svg" width="100%" viewBox="0 0 188 80" aria-label="Earnings chart" style="margin-bottom: 12px;">
-                <defs>
-                  <linearGradient id="heroEarningsFillMobile" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#40A040" stop-opacity="0.28"/>
-                    <stop offset="100%" stop-color="#40A040" stop-opacity="0"/>
-                  </linearGradient>
-                </defs>
-                <line x1="0" y1="18" x2="188" y2="18" stroke="#1e2820" stroke-width="0.6" stroke-dasharray="3,3"/>
-                <line x1="0" y1="38" x2="188" y2="38" stroke="#1e2820" stroke-width="0.6" stroke-dasharray="3,3"/>
-                <line x1="0" y1="58" x2="188" y2="58" stroke="#1e2820" stroke-width="0.6" stroke-dasharray="3,3"/>
-                <path class="hero-chart-area" d="M12,55 L40,60 L68,44 L96,12 L124,30 L152,40 L180,50 L180,64 L12,64 Z" fill="url(#heroEarningsFillMobile)"/>
-                <polyline class="hero-chart-line" points="12,55 40,60 68,44 96,12 124,30 152,40 180,50" fill="none" stroke="#40A040" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
-                <circle cx="96" cy="12" r="4" fill="#40A040"/>
-                <circle cx="12" cy="55" r="2.5" fill="#40A040"/>
-                <circle cx="40" cy="60" r="2.5" fill="#40A040"/>
-                <circle cx="68" cy="44" r="2.5" fill="#40A040"/>
-                <circle cx="124" cy="30" r="2.5" fill="#40A040"/>
-                <circle cx="152" cy="40" r="2.5" fill="#40A040"/>
-                <circle cx="180" cy="50" r="2.5" fill="#40A040"/>
-                <text x="12" y="76" text-anchor="middle" font-size="8" fill="#5a6b5c" font-family="Inter,system-ui">Sun</text>
-                <text x="40" y="76" text-anchor="middle" font-size="8" fill="#5a6b5c" font-family="Inter,system-ui">Mon</text>
-                <text x="68" y="76" text-anchor="middle" font-size="8" fill="#5a6b5c" font-family="Inter,system-ui">Tue</text>
-                <text x="96" y="76" text-anchor="middle" font-size="8" fill="#5a6b5c" font-family="Inter,system-ui">Wed</text>
-                <text x="124" y="76" text-anchor="middle" font-size="8" fill="#5a6b5c" font-family="Inter,system-ui">Thu</text>
-                <text x="152" y="76" text-anchor="middle" font-size="8" fill="#5a6b5c" font-family="Inter,system-ui">Fri</text>
-                <text x="180" y="76" text-anchor="middle" font-size="8" fill="#40A040" font-family="Inter,system-ui" font-weight="700">Sat</text>
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div> -->
-
       <div class="hero-eyebrow">
         <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><ellipse cx="5" cy="5" rx="4.5" ry="2.8" fill="currentColor" transform="rotate(-30 5 5)"/></svg>
         Early Access
       </div>
 
       <!-- EDIT: Main headline -->
-      <h1 class="hero-title">Real-time visibility.</br><span>Hindi na lang yan para sa malalaking negosyo.</span></h1>
+      <h1 class="hero-title">
+        Real-time 
+        <span class="hero-odometer" aria-live="polite">
+          <span class="hero-odometer-item">sales</span>
+        </span>
+        tracking, hindi na lang yan para sa malalaking negosyo.
+        <br/>
+      </h1>
       <!-- EDIT: Subtitle -->
       <p class="hero-subtitle">In a world where AI accelerates global technology, Filipino micro-retailers deserve better tools built for the future. It’s time to level up! </p>
       <p class="hero-subtitle">See every sale and every stock level the moment it happens. No more end-of-day guesswork, no more manual tallying. Just open your phone and know exactly where your business stands.</p>
@@ -177,7 +123,7 @@
       <div class="hero-ctas">
         <!-- EDIT: CTA button text and href -->
         <a href="pages/sign-up-for-early-access.html" class="btn-primary">Sign-up for Early Access</a>
-        <a href="#features" class="btn-ghost">
+        <a href="#features-overview" class="btn-ghost">
           Learn More
         </a>
       </div>
@@ -193,68 +139,6 @@
         <span class="social-proof-text"><strong>240+ store owners</strong> already on the waitlist</span>
       </div>
     </div>
-
-    <!-- Phone visual — Dashboard screen -->
-    <div class="hero-visual">
-      <div class="hero-glow"></div>
-      <!-- <div class="phone phone-lg hero-chart-phone">
-        <div class="ph-content ph-hero-chart-only">
-          <div class="ph-hero-badge" style="margin-top: 8px;">Live earnings</div>
-          <div class="ph-hero-main">
-            <div>
-              <div class="ph-hero-label">Today’s earnings</div>
-              <div class="ph-hero-value">₱24,730</div>
-              <div class="ph-hero-note" style="color: var(--phone-green)">+18.4% from yesterday</div>
-            </div>
-          </div>
-          <div class="ph-stat-grid hero-mini-stats">
-            <div class="ph-stat hero-stat-card">
-              <div class="ph-stat-label">Transactions</div>
-              <div class="ph-stat-value">18</div>
-              <div class="ph-stat-note">+6 from yesterday</div>
-            </div>
-            <div class="ph-stat hero-stat-card">
-              <div class="ph-stat-label">Items Sold</div>
-              <div class="ph-stat-value">156</div>
-              <div class="ph-stat-note">+13 from yesterday</div>
-            </div>
-          </div>
-          <div class="ph-chart-card hero-chart-card">
-            <div class="ph-chart-header">
-              <span class="ph-chart-title">Earnings overview</span>
-              <span class="ph-chart-filter">This week</span>
-            </div>
-            <svg class="hero-chart-svg" width="100%" viewBox="0 0 188 80" aria-label="Earnings chart" style="margin-bottom: 12px;">
-              <defs>
-                <linearGradient id="heroEarningsFill" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#40A040" stop-opacity="0.28"/>
-                  <stop offset="100%" stop-color="#40A040" stop-opacity="0"/>
-                </linearGradient>
-              </defs>
-              <line x1="0" y1="18" x2="188" y2="18" stroke="#1e2820" stroke-width="0.6" stroke-dasharray="3,3"/>
-              <line x1="0" y1="38" x2="188" y2="38" stroke="#1e2820" stroke-width="0.6" stroke-dasharray="3,3"/>
-              <line x1="0" y1="58" x2="188" y2="58" stroke="#1e2820" stroke-width="0.6" stroke-dasharray="3,3"/>
-              <path class="hero-chart-area" d="M12,55 L40,60 L68,44 L96,12 L124,30 L152,40 L180,50 L180,64 L12,64 Z" fill="url(#heroEarningsFill)"/>
-              <polyline class="hero-chart-line" points="12,55 40,60 68,44 96,12 124,30 152,40 180,50" fill="none" stroke="#40A040" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
-              <circle cx="96" cy="12" r="4" fill="#40A040"/>
-              <circle cx="12" cy="55" r="2.5" fill="#40A040"/>
-              <circle cx="40" cy="60" r="2.5" fill="#40A040"/>
-              <circle cx="68" cy="44" r="2.5" fill="#40A040"/>
-              <circle cx="124" cy="30" r="2.5" fill="#40A040"/>
-              <circle cx="152" cy="40" r="2.5" fill="#40A040"/>
-              <circle cx="180" cy="50" r="2.5" fill="#40A040"/>
-              <text x="12" y="76" text-anchor="middle" font-size="8" fill="#5a6b5c" font-family="Inter,system-ui">Sun</text>
-              <text x="40" y="76" text-anchor="middle" font-size="8" fill="#5a6b5c" font-family="Inter,system-ui">Mon</text>
-              <text x="68" y="76" text-anchor="middle" font-size="8" fill="#5a6b5c" font-family="Inter,system-ui">Tue</text>
-              <text x="96" y="76" text-anchor="middle" font-size="8" fill="#5a6b5c" font-family="Inter,system-ui">Wed</text>
-              <text x="124" y="76" text-anchor="middle" font-size="8" fill="#5a6b5c" font-family="Inter,system-ui">Thu</text>
-              <text x="152" y="76" text-anchor="middle" font-size="8" fill="#5a6b5c" font-family="Inter,system-ui">Fri</text>
-              <text x="180" y="76" text-anchor="middle" font-size="8" fill="#40A040" font-family="Inter,system-ui" font-weight="700">Sat</text>
-            </svg>
-          </div>
-        </div>
-      </div>end .phone -->
-    </div><!-- end .hero-visual -->
   </div><!-- end .hero -->
 </section>
 
@@ -272,21 +156,15 @@
 
 
 <!-- ════════════════════════════════════════
-     SECTION 2: EARLY ACCESS
+     SECTION 2: FEATURES OVERVIEW
      ──────────────────────────────────────
      Edit: section-title, section-body,
      form placeholder labels, btn text
 ════════════════════════════════════════ -->
-<section id="early-access" class="section early-access">
-  <div class="section-eyebrow">Step Into the Future</div>
-  <h2 class="section-title">Be a Pioneer of Change</span></h2>
-  <p class="section-body">For too long, our neighborhood stores have been left behind by global technology. The time to change that is right now. Be a pioneer of this movement and claim a smarter, more secure, and completely portable way to run your business. Step away from messy paper logbooks and secure early access today.</p>
-  <div class="form-row" style="justify-content:center">
-    <form id="earlyAccessForm"></form>
-      <button class="btn-primary" type="submit"><a href="pages/sign-up-for-early-access.html">Sign-up for Early Access</a></button>
-    </form>
-
-  </div>
+<section id="features-overview" class="section features-overview">
+  <div class="section-eyebrow">Features</div>
+  <h2 class="section-title">Powerful retail tools,<br/>simplified for you.</span></h2>
+  <p class="section-body">Running a retail business shouldn't mean getting stuck with calculators and logbooks. Explore how Halin automates your daily checkout, tracks your income, and monitors your shelves automatically.</p>
 </section>
 
 
@@ -309,12 +187,6 @@
      Row B — Sales Analytics (phone left, text right)
      Row C — Inventory Low-Stock Alerts (text left, phone right)
 ════════════════════════════════════════ -->
-<section id="features" class="section feature-header">
-  <div class="section-eyebrow">Features</div>
-  <h2 class="section-title">Powerful retail tools,<br/>simplified for you.</span></h2>
-  <p class="section-body">Running a retail business shouldn't mean getting stuck with calculators and logbooks. Explore how Halin automates your daily checkout, tracks your income, and monitors your shelves automatically.</p>
-</section>
-
 <section id="features" class="section features">
   
   <!-- ── ROW A: Orders & Cart ── -->
@@ -624,6 +496,7 @@
                   <div class="ph-section-title" style="margin-top: 8px;">Credit</div>
                   <div class="ph-section-sub">3 balances due</div>
                 </div>
+                <div class="ph-credit-balance" style="margin-top: 8px; font-size: 16px; font-weight: 900;">₱3,400.00</div>
               </div>
               <div class="ph-search">
                 <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="#4a5a4c" stroke-width="1.2"><circle cx="4" cy="4" r="3"/><line x1="6.5" y1="6.5" x2="9" y2="9"/></svg>
@@ -649,7 +522,28 @@
                     <div class="ph-credit-name">Rico Perez</div>
                     <div class="ph-credit-subtext">0922-987-6543</div>
                   </div>
+                  <div class="ph-credit-balance">₱582.00</div>
+                </div>
+                <div class="ph-credit-item">
+                  <div class="ph-credit-main">
+                    <div class="ph-credit-name">Cynthia De Guzman</div>
+                    <div class="ph-credit-subtext">0922-987-6543</div>
+                  </div>
                   <div class="ph-credit-balance">₱320.00</div>
+                </div>
+                <div class="ph-credit-item">
+                  <div class="ph-credit-main">
+                    <div class="ph-credit-name">Andres Polinar</div>
+                    <div class="ph-credit-subtext">0922-987-6543</div>
+                  </div>
+                  <div class="ph-credit-balance">₱278.00</div>
+                </div>
+                <div class="ph-credit-item">
+                  <div class="ph-credit-main">
+                    <div class="ph-credit-name">Helen Cruz</div>
+                    <div class="ph-credit-subtext">0922-987-6543</div>
+                  </div>
+                  <div class="ph-credit-balance">₱190.00</div>
                 </div>
               </div>
             </div>

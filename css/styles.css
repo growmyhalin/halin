@@ -411,19 +411,12 @@ input, button { font-family: inherit; border: none; outline: none; cursor: point
   font-family: 'Nunito', system-ui, -apple-system, sans-serif;
   line-height: 1.12;
   letter-spacing: -1.2px;
-  color: var(--hero-text-head);
+  color: var(--green);
   margin-bottom: 18px;
   transition: color 0.3s;
-  background-image: var(--hero-title-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
 }
 .hero-title > span:not(.hero-odometer) {
-  background-image: var(--hero-title-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--green);
 }
 
 .hero-odometer {
@@ -482,9 +475,9 @@ input, button { font-family: inherit; border: none; outline: none; cursor: point
   align-items: center;
   justify-content: center;
   margin-left: -8px;
-  border: 2px solid var(--hero-chip-border);
-  background: var(--hero-avatar-bg);
+  background: var(--hero-chip-bg);
   color: var(--hero-avatar-color);
+  border: 1px solid var(--hero-chip-border);
   transition: border-color 0.3s;
 }
 .avatar:first-child { margin-left: 0; }
@@ -514,7 +507,7 @@ input, button { font-family: inherit; border: none; outline: none; cursor: point
 /* ═══════════════════════════
    EARLY ACCESS SECTION
 ═══════════════════════════ */
-.early-access {
+.features-overview {
   background: var(--phone-card);
   padding: 64px 40px;
   text-align: center;
@@ -1639,7 +1632,7 @@ input, button { font-family: inherit; border: none; outline: none; cursor: point
 
   .leaf-divider { padding: 0 20px; }
 
-  .early-access { padding: 40px 20px; }
+  .features-overview { padding: 40px 20px; }
   .form-row { flex-direction: column; }
   .form-input { min-width: 0; width: 100%; }
 
