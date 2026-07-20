@@ -215,12 +215,13 @@ input, button { font-family: inherit; border: none; outline: none; cursor: point
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
+  background: none;
 }
 .ham-line {
   width: 22px;
   height: 2px;
   border-radius: 2px;
-  background: var(--text-head);
+  background: var(--green);
   transition: background 0.3s;
 }
 
