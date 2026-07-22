@@ -54,7 +54,7 @@ if (hamburger && mobileDrawer) {
 }
 
 function initHeroOdometer() {
-  const labels = ['sales', 'inventory', 'customer credit'];
+  const labels = ['sales', 'inventory', 'utang'];
   const wrapper = document.querySelector('.hero-odometer');
   const item = wrapper?.querySelector('.hero-odometer-item');
   if (!wrapper || !item) return;

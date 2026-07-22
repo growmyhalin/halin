@@ -425,7 +425,7 @@ input, button { font-family: inherit; border: none; outline: none; cursor: point
   position: relative;
   overflow: hidden;
   vertical-align: bottom;
-  min-width: 10ch;
+  min-width: 7.5ch;
   height: 1.11em;
 }
 
